@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>My Portfolio</title>
+
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <a class="navbar-brand" href="index.html" id="logo">John Cannon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- End of navbar -->
+
+  <!-- Start of container -->
+  <main class="container">
+    <!-- Start of Bootstrap setup -->
+    <section class="row">
+      <div class="col-md-6">
+        <!-- Input form -->
+        <form class="block form-horizontal">
+          <!-- Form header -->
+          <h1 class="block-header">Contact</h1>
+          <hr />
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-12">
+              <input type="email" class="form-control" id="name" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-12">
+              <input type="password" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="msg">Message</label>
+            <div class="col-sm-12">
+              <textarea id="msg" class="form-control" rows="3" placeholder="Message"></textarea>
+            </div>
+          </div>
+          <button class="submit-btn">Submit</button>
+        </form>
+        <!-- End of form -->
+      </div>
+      <div class="col-md-6">
+        <!-- Start of section showing Bootstrap grid examples -->
+        <section class="block">
+          <h1 class="block-header">Thank You!</h1>
+          <hr />
+          <!-- Row 1 -->
+          <div class="row border border-dark">
+            <div class="col-md-12 text-center border border-alert">
+              <p>Center text in Row 1.</p>
+              <!-- Start of subrow -->
+              <div class="row border border-success">
+                <div class="col-xs-12 col-md-6 border border-alert flex-direction-column">
+                  <p>Text in subrow.</p>
+                  <div class="col-md-12 border border-dark">
+                    <p>Sub-column</p>
+                  </div>
+                  <div class="col-md-12 border border-dark">
+                    <p>Sub-column</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6 border border-alert">
+                  <p>Text in a subrow.</p>
+                </div>
+              </div>
+              <!-- End of subrow -->
+            </div>
+          </div>
+          <!-- End of Row 1 -->
+        </section>
+      </div>
+    </section>
+    <!-- End of Bootstrap -->
+  </main>
+  <!-- End of container -->
+
+  <!-- Start of sticky footer -->
+  <footer id="sticky-footer" class="py-4 bg-dark text-light">
+    <div class="container text-center">
+        <small>Copyright &copy; John Cannon (2020)</small>
+    </div>
+  </footer>
+  <!-- End of sticky footer -->
+
+
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script></script>
+
+</body>
+
+</html>
