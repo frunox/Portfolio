@@ -28,12 +28,15 @@ main {
 /* create styles for use for all the content boxes */
 .block {
   /* Visual */
-  /* background: #343a40; */
-  background-image: radial-gradient(black 15%, #343a40 60%, black 25%);
-  opacity: 60%;
+  background: #343a40;
+
   /* Positioning */
   padding: 30px;
   margin-bottom: 30px;
+}
+
+p {
+  color: white;
 }
 
 .block.block-header {
