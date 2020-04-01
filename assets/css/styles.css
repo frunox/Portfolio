@@ -5,7 +5,7 @@ body {
 
   /* Visual */
   background-image: url("../imgs/background.jpg");
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 html {
@@ -26,15 +26,7 @@ main {
 }
 
 /* create styles for use for all the content boxes */
-.block {
-  /* Visual */
-  /* background: #343a40; */
-  background-image: radial-gradient(black 15%, #343a40 60%, black 25%);
-  opacity: 60%;
-  /* Positioning */
-  padding: 30px;
-  margin-bottom: 30px;
-}
+
 
 .block.block-header {
   /* Typography */
@@ -115,6 +107,18 @@ h1 {
 /* --- END STYLES FOR ALL PAGES --- */
 
 /* --- PAGE-SPECIFIC STYLES --- */
+/* INDEX PAGE */
+
+#indexHeading {
+  /* Visual */
+  /* background: #343a40; */
+  background-image: radial-gradient(black 15%, #343a40 60%, black 25%);
+  opacity: 60%;
+  /* Positioning */
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
 /* ABOUT-ME PAGE */
 .about-me-header {
   /* Positioning */
@@ -127,10 +131,21 @@ h1 {
   color: #4aaaa5;
 }
 
+#aboutBlock {
+  opacity: 1;
+  color: white;
+}
+
+.aboutRow {
+  background-color: violet;
+  margin-bottom: 10px;
+}
+
 /* Style the card */
 .card {
   /* Visual - match to other content */
   background: rgb(214, 209, 209);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card p {
@@ -143,6 +158,10 @@ h1 {
 .port-image {
   margin: 20px auto;
 }
+
+/* .pCard {
+  border: 10px solid darkgrey;
+} */
 /* END PORTFOLIO PAGE */
 
 /* CONTACT FORM PAGE  */
