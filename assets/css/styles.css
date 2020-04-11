@@ -152,6 +152,14 @@ h1 {
   /* Typography */
   text-align: center;
 }
+
+.linksLogo {
+  font-size: 1.4rem;
+}
+
+.logoBlack {
+  color: black;
+}
 /* END ABOUT-ME PAGE */
 
 /* PORTFOLIO PAGE */
@@ -159,9 +167,11 @@ h1 {
   margin: 20px auto;
 }
 
-/* .pCard {
+.pCard {
   border: 10px solid darkgrey;
-} */
+  height: 250px;
+  width: 150px;
+}
 /* END PORTFOLIO PAGE */
 
 /* CONTACT FORM PAGE  */
