@@ -125,7 +125,8 @@ h1 {
 #indexHeading {
   /* Visual */
   /* background: #343a40; */
-  background-image: radial-gradient(black 15%, #343a40 60%, black 25%);
+  /* background-image: radial-gradient(black 30%, gray 25%); */
+  background-image: linear-gradient(to right, rgb(165, 165, 165,0.0),black, black,rgb(155,155,155,0.0));
   opacity: 60%;
   /* Positioning */
   padding: 30px;
@@ -158,12 +159,16 @@ h1 {
 .card {
   /* Visual - match to other content */
   background: rgb(214, 209, 209);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  -webkit-box-shadow: 0px 0px 14px 4px rgba(22, 22, 22, 0.97); 
+  box-shadow: 0px 0px 14px 4px rgba(22,22,22,0.97);
 }
 
 .card p {
   /* Typography */
   text-align: center;
+  border: 1px solid black;
+  /* margin-bottom: 20px; */
 }
 
 .linksLogo {
@@ -181,9 +186,9 @@ h1 {
 }
 
 .pCard {
-  border: 10px solid darkgrey;
-  height: 250px;
-  width: 150px;
+  /* border: 10px solid darkgrey; */
+  /* height: 250px;
+  width: 150px; */
 }
 /* END PORTFOLIO PAGE */
 
