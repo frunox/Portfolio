@@ -11,45 +11,48 @@
   <!-- Bootstrap Stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+  <!-- <script type="text/javascript" src="js/jquery-social-share-bar.js"></script> -->
   <!-- Our own CSS stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css" media="screen" />
 
 </head>
 
-<body class="background">
+<body class="pageBG">
+
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brands" href="index.html" id="logo">John Cannon</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <nav class="collapse navbar-collapse" sid="navbarTogglerDemo01">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="about.html">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.navbar-collapse -->
+    <!-- <div class="container"> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <a class="navbar-brands" href="index.html" id="logo">John Cannon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
     </div>
-    <!-- /.container -->
   </nav>
   <!-- End of navbar -->
 
   <!-- Start of container -->
-  <main class="container">
+  <main class="container" id="aboutContainer">
     <!-- Place all content in 1 row -->
     <section class="row">
       <div class="col-md-8">
@@ -59,29 +62,43 @@
           <hr />
           <!-- Start of first row inside this column -->
           <div class="row align-items-center aboutRow">
-            <div class="col-md-4">
-              <img src="assets/imgs/lfplan.png" class="card-img-bottom about-img" alt="Engineering Plan" />
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/lfplan 9x6.png" class="card-img-bottom about-img" alt="Engineering Plan" />
             </div>
             <div class="col-md-8">
               <p>
-                Civil engineers are designers. Functionality and precision
-                were paramount. Problems were overcome using logic and
-                creative thinking.
+                I was a civil engineer. Engineering projects start with detailed planning. Design proceeds with frequent
+                reviews. Problems are overcome using logic and creative thinking. The result is a set of detailed
+                documents describing how to reach a desired goal.
               </p>
             </div>
           </div>
           <!-- Start of second row in this column -->
           <div class="row align-items-center aboutRow">
-            <div class="col-md-4">
-              <img src="assets/imgs/lfplan.png" class="card-img-bottom about-img" alt="Engineering Plan" />
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/cat-equipment 9x6.png" class="card-img-bottom about-img"
+                alt="Construction Equipment" />
+            </div>
+            <div class="col-md-8">
+              <p>
+                The creation of web apps is much like engineering design. An
+                efficient, logical approach can be used in coding and
+                developing both the front and back end technologies. Implementing a well-prepared plan results in a
+                successful product.
+              </p>
+            </div>
+          </div>
+          <!-- Start of third row in this column -->
+          <div class="row align-items-center aboutRow">
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/closed-lf.jpg" class="card-img-bottom about-img" alt="Project Constructed" />
               <!-- <img src="assets/imgs/lfplan.png" class="card-img-bottom" alt="Engineering Plan" /> -->
             </div>
             <div class="col-md-8">
               <p>
-                The creation of web apps is much like engineering design. The
-                efficient, logical approach can be used in coding and
-                developing the back end technology. But now, can create the
-                aesthetic elements.
+                As a web developer, I bring a wealth of experience in bringing projects to life. Teamwork is critical.
+                My tools are different, and there are always new things to learn. But the goal is the same. A
+                well-planned, well-executed process, with innovative thinking applied, brings new ideas to life.
               </p>
             </div>
           </div>
@@ -93,21 +110,21 @@
         <figure class="block">
           <h1 class="block-header">My Images</h1>
           <hr />
-          <p class="text-center">Photos of the day.</p>
-          <!-- Carousel to display personal images -->
+
           <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="assets/imgs/IMGP9237.jpg" class="d-block w-100" alt="Butterfly">
+                <img src="assets/imgs/IMGP9237.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="assets/imgs/Loon Close Up.jpg" class="d-block w-100" alt="Heron">
+                <img src="assets/imgs/LoonCloseUp.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="assets/imgs/MN River swamp IMGP9029.jpg" class="d-block w-100" alt="Swamp">
+                <img src="assets/imgs/MNRiverswampIMGP9029.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
-            <!-- End of carousel -->
+          </div>
+          <!-- End of carousel -->
         </figure>
         <!-- End of carousel and related content -->
         <!-- row below carousel with links -->
@@ -120,12 +137,10 @@
           <div class="col-xs-12">
             <a class="linksLogo" href="https://www.linkedin.com/in/john-cannon-58145b105/" id="linkinLogo"><i
                 class="fab fa-linkedin"></i>LinkedIn</a>
-            <br />
-            <a class="linksLogo logoBlack" href="https://github.com/frunox/" id="githubLogo"><i
-                class="fab fa-github-square"></i></i>github</a>
-            <br />
+            <span><a class="linksLogo logoBlack" href="https://github.com/frunox/" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>github</a></span>
             <a class="linksLogo logoBlack" href="assets/docs/resume.pdf" id="resumeLogo"><i
-                class="fas fa-user-injured"></i></i>Resume</a>
+                class="fas fa-camera-retro"></i></i>Resume</a>
           </div>
         </div>
       </div>
@@ -147,6 +162,9 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
 </body>

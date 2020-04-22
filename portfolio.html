@@ -7,11 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Portfolio</title>
+  <title>John Cannon Portfolio</title>
 
   <!-- Boostrap Stylesheet -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+
   <!-- fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -20,34 +25,30 @@
 
 </head>
 
-<body>
-  <!-- Navbar -->
+<body class="pageBG">
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brand" href="index.html" id="logo">John Cannon</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-          <!-- Re-order links -->
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">About</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
+    <!-- <div class="container"> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <a class="navbar-brands" href="index.html" id="logo">John Cannon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
     </div>
-    <!-- /.container -->
   </nav>
   <!-- End of navbar -->
 
@@ -58,47 +59,80 @@
       <div class="col-md-12">
         <!-- Section for portfolio images -->
         <section class="block">
-          <h1 class="block-header">Portfolio</h1>
+          <h1 class="block-header">Projects</h1>
           <hr />
-          <div class="row mb-20">
-            <div class="col-sm-6">
-              <article class="card pCard" style="width: 100%;">
-                <img src="assets/imgs/yelpcamp.png" class="card-img-top" alt="Heron" />
-                <div class="card-body">
-                  <p class="card-text">YelpCamp</p>
-                </div>
-              </article>
-              <!-- <img class="img-fluid port-image" src="assets/imgs/yc2.png" alt="Campground Page"> -->
+          <div class="row align-items-center aboutRow">
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/top-shelf.png" class="card-img-bottom about-img" alt="Engineering Plan" />
             </div>
-            <div class="col-sm-6">
-              <article class="card pCard" style="width: 100%;">
-                <img src="assets/imgs/whatsOn home.png" class="card-img-top" alt="Heron" />
-                <div class="card-body">
-                  <p class="card-text">whatsOn</p>
-                  <a class="linksLogo logoBlack" href="https://lhirsch1.github.io/whatsOn/#myModal" id="githubLogo"><i
-                      class="fab fa-github-square"></i></i>App</a>
-                  <a class="linksLogo logoBlack" href="https://lhirsch1.github.io/whatsOn/#myModal" id="githubLogo"><i
-                      class="fab fa-github-square"></i></i>Repo</a>
-                </div>
-              </article>
-              <!-- <img class="img-fluid port-image" src="assets/imgs/yelpcamp.png" alt="yelpcamp"> -->
+            <div class="col-md-8 portfolioText">
+              <h5 class="card-title">Top Shelf</h5>
+              <p>
+                Create a database of your wines, including reviews and
+                ratings, and share them with friends.
+              </p>
+              <a class="linksLogo logoBlack" href="https://murmuring-island-55644.herokuapp.com" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>App</a>
+              <a class="linksLogo logoBlack" href="https://github.com/fox-yokai/top-shelf" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>Repo</a>
             </div>
-
           </div>
-          <!-- <div class="row">
-            <div class="col-sm-6">
-              <img class="img-fluid port-image" src="assets/imgs/card example.png" alt="">
+          <div class="row align-items-center aboutRow">
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/yelpcamp2.png" class="card-img-bottom about-img" alt="Engineering Plan" />
             </div>
-            <div class="col-sm-6">
-              <img class="img-fluid port-image" src="assets/imgs/black bgd.png" alt="">
+            <div class="col-md-8">
+              <h5 class="card-title">Yelp Camp</h5>
+              <p>
+                Create a database of your favorite campground. Comment on yours and other users favorites.
+              </p>
+              <a class="linksLogo logoBlack" href="https://tranquil-journey-28781.herokuapp.com/" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>App</a>
+              <a class="linksLogo logoBlack" href="https://github.com/frunox/Camp-Talk" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>Repo</a>
             </div>
-          </div> -->
-        </section>
-        <!-- End of section -->
-      </div>
+          </div>
 
-    </main>
-    <!-- End of Bootstrap setup -->
+          <div class="row align-items-center aboutRow">
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/whatsOn 9x6.png" class="card-img-bottom about-img" alt="Engineering Plan" />
+            </div>
+            <div class="col-md-8 portfolioText">
+              <h5 class="card-title">whatsOn</h5>
+              <p>
+                Find where TV shows and movies are streaming, and where movies are playing near you.
+              </p>
+              <a class="linksLogo logoBlack" href="https://lhirsch1.github.io/whatsOn/#myModal" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>App</a>
+              <a class="linksLogo logoBlack" href="https://github.com/lhirsch1/whatsOn" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>Repo</a>
+            </div>
+          </div>
+
+
+          <div class="row align-items-center aboutRow">
+            <div class="col-md-4 portfolioImage">
+              <img src="assets/imgs/note-taker.png" class="card-img-bottom about-img" alt="Engineering Plan" />
+            </div>
+            <div class="col-md-8 portfolioText">
+              <h5 class="card-title">Note Taker</h5>
+              <p>
+                Save and delete notes.
+              </p>
+              <a class="linksLogo logoBlack" href="https://floating-journey-20813.herokuapp.com" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>App</a>
+              <a class="linksLogo logoBlack" href="https://github.com/frunox/Note-Taker" id="githubLogo"><i
+                  class="fab fa-github-square"></i></i>Repo</a>
+            </div>
+          </div>
+
+      </div>
+      </section>
+      <!-- End of section -->
+  </div>
+
+  </main>
+  <!-- End of Bootstrap setup -->
   </div>
   <!-- End of container -->
 
@@ -110,13 +144,15 @@
   </footer>
   <!-- End of sticky footer -->
 
-
   <!-- jQuery and popper CDNs -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
 </body>

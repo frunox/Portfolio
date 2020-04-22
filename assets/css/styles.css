@@ -7,7 +7,7 @@
   background-size: cover;
 } */
 
-body {
+.indexBG {
   /* Typography */
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
@@ -19,6 +19,10 @@ body {
   background-size: cover;
 }
 
+
+.pageBG {
+  background-color: #343a40;
+}
 
 
 html {
@@ -51,6 +55,7 @@ main {
 h1 {
   opacity: 1;
   color: white;
+  margin: 0 auto;
 }
 
 /* remove margins from rows to allow borders */
@@ -114,6 +119,7 @@ h1 {
   width: 100%;
   bottom: 0;
   flex-shrink: 0;
+  background-color: transparent;
 }
 /* END OF STICKY FOOTER */
 
@@ -125,15 +131,33 @@ h1 {
 #indexHeading {
   /* Visual */
   /* background: #343a40; */
-  /* background-image: radial-gradient(black 30%, gray 25%); */
-  background-image: linear-gradient(to right, rgb(165, 165, 165,0.0),black, black,rgb(155,155,155,0.0));
-  opacity: 60%;
+  /* background-image: radial-gradient(black 25%, rgb(31, 16, 16,0.5), rgb(155,155,155,0.0)); */
+  background-image: linear-gradient(to right, rgb(165, 165, 165,0.0), black 50%,rgb(155,155,155,0.0));
+  /* , radial-gradient(rgb(165, 165, 165,0.0),black,rgb(155,155,155,0.0)); */
+  /* opacity: 60%; */
   /* Positioning */
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 10px 30px 10px 30px;
+  /* margin-bottom: 30px; */
+}
+
+#indexHeader {
+  color: white;
 }
 
 /* ABOUT-ME PAGE */
+#aboutContainer {
+  padding: 0;
+}
+
+.indexText {
+  position: relative;
+  top: 60%;
+}
+
+#indexText {
+  white-space: pre;
+}
+
 .about-me-header {
   /* Positioning */
   margin-bottom: 33px;
@@ -151,8 +175,21 @@ h1 {
 }
 
 .aboutRow {
-  background-color: violet;
-  margin-bottom: 10px;
+  /* background-image: linear-gradient(to right, rgb(165, 165, 165,0.0), black 50%,rgb(155,155,155,0.0)); */
+  background-image: linear-gradient(to right, #b263bb, #b263bb 85%,#343a40);
+  /* background-color: #b263bb; */
+  margin-bottom: 30px;
+  /* -webkit-box-shadow: 0px 0px 14px 4px #b263bb; 
+  box-shadow: 0px 0px 14px 4px #b263bb; */
+}
+
+.about-img {
+  margin-left: 0;
+  padding: 0;
+}
+
+.portfolioText {
+  padding-left: 1px;
 }
 
 /* Style the card */
@@ -164,6 +201,20 @@ h1 {
   box-shadow: 0px 0px 14px 4px rgba(22,22,22,0.97);
 }
 
+.portfolioImage {
+  padding-left: 0;
+}
+
+.card-title {
+  text-decoration: underline;
+  padding-left: 1px;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .card p {
   /* Typography */
   text-align: center;
@@ -172,11 +223,11 @@ h1 {
 }
 
 .linksLogo {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .logoBlack {
-  color: white;
+  color: black;
 }
 /* END ABOUT-ME PAGE */
 
@@ -185,11 +236,11 @@ h1 {
   margin: 20px auto;
 }
 
-.pCard {
+/* .pCard { */
   /* border: 10px solid darkgrey; */
   /* height: 250px;
   width: 150px; */
-}
+/* } */
 /* END PORTFOLIO PAGE */
 
 /* CONTACT FORM PAGE  */
@@ -200,6 +251,10 @@ h1 {
   /* keep from horizontally resizing text area */
   min-width: 100%;
   max-width: 100%;
+}
+
+.form-group {
+  color: white;
 }
 
 .submit-btn {
