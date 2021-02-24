@@ -1,0 +1,7 @@
+/* These style affect all components
+The 'body' can be anywhere - it affects /public/index.html
+ */
+
+.App {
+  text-align: center;
+}
