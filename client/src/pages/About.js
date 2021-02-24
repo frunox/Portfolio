@@ -1,15 +1,17 @@
 import React from "react";
-import AboutMeComp from "../components/AboutMeComp/AboutMeComp";
-import AboutUser from "../components/AboutUser";
+import Background from "../components/Background"
 import HomeNav from "../components/HomeNav";
-import './about.css'
+import AboutDP from "../components/AboutDP";
+import AboutUser from "../components/AboutUser";
+// import './about.css'
 
 function About() {
   return (
     <div className="about">
+      <Background />
       <HomeNav />
-      <AboutMeComp></AboutMeComp>
-      <AboutUser className="aboutUser"></AboutUser>
+      <AboutUser />
+      <AboutDP />
     </div>
   );
 }

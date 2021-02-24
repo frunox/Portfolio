@@ -4,22 +4,25 @@
 } */
 .aboutWrapper {
   height: 100%;
-  width: 100%;
-  color: rgb(226, 215, 215);
+  width: 65%;
+  color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .title {
-  color: rgb(226, 215, 215);
+  color: black;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
 }
 
 .aboutContainer {
   position: relative;
-  top: 55px;
+  top: 85px;
+  left: 12%;
   padding-bottom: 35px;
+  z-index: 10;
 }
 
 .top {
@@ -27,10 +30,6 @@
   margin-top: 10px;
 }
 
-a {
-  color: yellow;
-}
-
 a:hover {
-  color: black;
+  color: green;
 }

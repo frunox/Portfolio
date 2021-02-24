@@ -1,0 +1,21 @@
+import React from "react";
+// import DevDataContext from "../../contexts/DevDataContext";
+import './Intro.css'
+
+const Intro = () => {
+  // const devCtx = useContext(DevDataContext);
+  // console.log('Intro: ', devCtx.state.fname, devCtx.state.lname)
+  return (
+    <div className='intro'>
+      <div className="jumbo">
+        <h1 className="greeting">Welcome to the portfolio page for</h1>
+        <h1 className="userName">First LastName</h1>
+        <h2 className='tagLine'>
+          A web developer. Design, management and planning experience.  Bringing projects to life!
+        </h2>
+      </div>
+    </div>
+  )
+};
+
+export default Intro;

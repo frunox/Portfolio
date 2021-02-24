@@ -12,10 +12,14 @@
   margin-bottom: 15px;
 } */
 
-.cardList {
-  margin-top: -25px;
+.portCards {
+  z-index: 10;
+  position: absolute;
+  top: 158px;
+  left: 10%;
 }
 
 .columns {
   margin-bottom: 25px;
+  z-index: 10;
 }

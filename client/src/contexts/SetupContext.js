@@ -16,7 +16,7 @@ export const SetupProvider = (props) => {
         syncModalOpen: false,
         sync: false,
         loading: false,
-        lastPage: ""
+        notHome: false
     });
 
     return (
@@ -87,11 +87,11 @@ export const SetupProvider = (props) => {
                     })
                 },
 
-                setLastPage: (value) => {
-                    // console.log('setupCtx setLastPage', value, typeof value)
+                updateNotHome: (value) => {
+                    // console.log('setupCtx updateNotHome', value, typeof value)
                     setState({
                         ...state,
-                        lastPage: value
+                        notHome: value
                     })
                 },
 

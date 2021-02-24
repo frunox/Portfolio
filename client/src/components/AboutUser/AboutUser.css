@@ -1,0 +1,47 @@
+/* .aboutContainer {
+  background-color: black;
+  color: white;
+} */
+
+.grid {
+  margin-top: 100px;
+  color: white;
+  position: relative;
+  top: 45px;
+  left: 5%;
+  width: 65%;
+  z-index: 10;
+}
+
+.ui.grid > .ui.grid:last-child {
+  margin-bottom: 2em;
+}
+
+.ui.grid h3 {
+  margin: 15px 0 0;
+}
+
+.aboutSection1 {
+  color: rgb(168, 52, 67);
+}
+
+.aboutSection2 {
+  color: rgb(9, 110, 26);
+  position: relative;
+  left: 10%;
+}
+
+.aboutImage {
+  border-radius: 50%;
+}
+
+.aboutCard {
+  background: linear-gradient(
+    to left top,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.6)
+  );
+  margin: 0.5rem 0 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 6px 6px 20px rgba(75, 75, 75, 0.377);
+}
