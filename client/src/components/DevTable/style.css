@@ -19,11 +19,6 @@ hr {
   margin-left: 5%;
 }
 
-.repoModal {
-  position: relative;
-  top: 55px;
-}
-
 .formBox {
   border: 1px solid black;
   margin-top: 5px;
@@ -64,17 +59,18 @@ hr {
 
 /* // MODAL */
 
-.modalHeader {
+.repoModalHeader {
   text-align: center;
 }
 
-.modalHeader h1 {
-  margin: 0;
+.repoModalHeader h1 {
+  margin: 0 0 15px;
 }
 
-.modalHeader p {
+.repoModalP {
   font-size: 1.5rem;
   font-weight: bold;
+  color: blue;
 }
 
 .ui.modal {

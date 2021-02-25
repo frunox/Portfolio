@@ -81,7 +81,6 @@ const LoginModal = () => {
             width: '400px',
             margin: '0 auto',
             height: '400px',
-            zIndex: '100'
           }
         }}
       >

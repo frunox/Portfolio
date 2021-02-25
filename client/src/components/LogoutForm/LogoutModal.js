@@ -79,7 +79,6 @@ const LogoutModal = () => {
             width: '400px',
             margin: '0 auto',
             height: '255px',
-            zIndex: '100'
           }
         }}
       >

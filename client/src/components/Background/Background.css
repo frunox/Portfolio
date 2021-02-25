@@ -10,11 +10,6 @@ main {
   min-width: 100%;
 }
 
-main,
-h1 {
-  max-width: 100%;
-  position: absolute;
-}
 .glass {
   position: absolute;
   top: 85px;
