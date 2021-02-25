@@ -10,7 +10,7 @@ function PortCards() {
   return (
     <div className='portCards'>
       <Grid container stackable>
-        <Grid.Row centered className="rows">
+        <Grid.Row className="rows">
           {devCtx.state.repositories
             .filter(repo => repo.activeFlag === 'true')
             .map((repo, index) => (

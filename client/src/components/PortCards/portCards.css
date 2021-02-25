@@ -13,13 +13,9 @@
 } */
 
 .portCards {
-  z-index: 10;
-  position: absolute;
-  top: 158px;
-  left: 10%;
+  margin-top: 125px;
 }
 
 .columns {
   margin-bottom: 25px;
-  z-index: 10;
 }
