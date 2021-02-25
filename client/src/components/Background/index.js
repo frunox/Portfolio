@@ -10,7 +10,6 @@ function Background() {
         <section className='glass'></section>
       </main>
       <div className='circle1'></div>
-      <div className='circle3'></div>
       <img className='bird' src="https://i.ibb.co/Px6x96w/purepng-com-colorful-hummingbird.png" alt="hummingbird" border="0" />
       <img className='branch' src="https://i.ibb.co/8bZ5rh1/pink-blossom.png" alt="pink-blossom" border="0" />
       <img className='tree' src="https://i.ibb.co/pJmy6DM/chestnut-tree.png" alt="chestnut-tree" border="0"></img>

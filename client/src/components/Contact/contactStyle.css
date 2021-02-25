@@ -1,10 +1,9 @@
-.contactContainer {
-  padding-top: 30px;
-  padding-bottom: 20px;
-}
-
-.container {
-  width: 80%;
+.contact {
+  position: relative;
+  top: 100px;
+  left: 5%;
+  width: 65%;
+  z-index: 10;
 }
 
 h3 {

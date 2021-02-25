@@ -253,113 +253,117 @@ const DevTable = () => {
 
   let content = (
     <Fragment>
-      <Container>
-        <span className="searchLine">
-          <RepoSearchBox handleSearchChange={handleSearchChange} resetRepoSearch={resetRepoSearch} />
-        </span>
-      </Container>
-      <div className="devTable">
-        <Table sortable celled fixed inverted singleLine>
-          <Table.Header inverted>
-            <Table.Row className="sticky">
-              <Table.HeaderCell
-                width={3}
-                sorted={column === "name" ? direction : null}
-                onClick={handleSort("name")}
-              >
-                Project Name
+      <div className='devPage'>
+        <div className='tableContent'>
+          <Container>
+            <span className="searchLine">
+              <RepoSearchBox handleSearchChange={handleSearchChange} resetRepoSearch={resetRepoSearch} />
+            </span>
+          </Container>
+          <div className="devTable">
+            <Table sortable celled fixed inverted singleLine>
+              <Table.Header inverted>
+                <Table.Row className="sticky">
+                  <Table.HeaderCell
+                    width={3}
+                    sorted={column === "name" ? direction : null}
+                    onClick={handleSort("name")}
+                  >
+                    Project Name
             </Table.HeaderCell>
-              <Table.HeaderCell
-                sorted={column === "description" ? direction : null}
-                onClick={handleSort("description")}
-              >
-                Description
+                  <Table.HeaderCell
+                    sorted={column === "description" ? direction : null}
+                    onClick={handleSort("description")}
+                  >
+                    Description
             </Table.HeaderCell>
-              <Table.HeaderCell
-                width={2}
-                textAlign="center"
-                sorted={column === "activeFlag" ? direction : null}
-                onClick={handleSort("activeFlag")}
-              >
-                Display
+                  <Table.HeaderCell
+                    width={2}
+                    textAlign="center"
+                    sorted={column === "activeFlag" ? direction : null}
+                    onClick={handleSort("activeFlag")}
+                  >
+                    Display
             </Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {console.log('in Table filteredRepos', filteredRepos)}
-            {_.map(
-              filteredRepos,
-              ({ repoDesc, activeFlag, repoName, repoID }, index) => (
-                <Table.Row className="devRow" id={index} key={repoID} value={index} active onClick={e => showDevRepo(repoID)}>
-                  <Table.Cell>{repoName}</Table.Cell>
-                  <Table.Cell>{repoDesc}</Table.Cell>
-                  <Table.Cell textAlign="center">{activeFlag}</Table.Cell>
                 </Table.Row>
-              )
-            )}
-          </Table.Body>
-        </Table >
-      </div >
-      <div>
-        <Container>
-          <Modal isOpen={openModal} onRequestClose={() => setupCtx.openRepoModal(false)}
-            style={{
-              overlay: {
-                backgroundColor: 'rgba(155, 155, 155, 0.5)'
-              },
-              content: {
-                borderRadius: '10px',
-                top: '90px',
-                border: '1px solid black',
-                width: '500px',
-                margin: '0 auto',
-                height: '410px'
-              }
-            }}
-          >
-            <div className='modalHeader'>
-              <h1 className="repoModalH1">Update Repository:</h1>
-              <p className="repoModalP">{state.repoName}</p>
-            </div>
-            <List as="ul" bulleted inverted className="bList">
-              <List.Item as="li">Enter the project description and website in GitHub.</List.Item>
-              <List.Item as="li">Image width/height ratio should be 3:2.</List.Item>
-            </List>
-            <form>
-              <label className="inputLabel">Current Display Status: {state.activeFlag}</label>
-              <Checkbox
-                className="inputLabel"
-                label='Display'
-                checked={state.activeFlag === 'true'}
-                onChange={!isLoggedIn ? null : () => updateFlag(state.rowClick)}
-              />
-              <hr />
-            </form>
-            <form onSubmit={(event) => handleLinkUpdate(event)}>
-              <div>
-                <label className="inputLabel">Current Image Link</label>
-                <input className="urlBox" name="imageLink" placeholder={state.imageLink} value={state.value} onChange={!isLoggedIn ? null : (event) => handleLinkChange(event)} />
+              </Table.Header>
+              <Table.Body>
+                {console.log('in Table filteredRepos', filteredRepos)}
+                {_.map(
+                  filteredRepos,
+                  ({ repoDesc, activeFlag, repoName, repoID }, index) => (
+                    <Table.Row className="devRow" id={index} key={repoID} value={index} active onClick={e => showDevRepo(repoID)}>
+                      <Table.Cell>{repoName}</Table.Cell>
+                      <Table.Cell>{repoDesc}</Table.Cell>
+                      <Table.Cell textAlign="center">{activeFlag}</Table.Cell>
+                    </Table.Row>
+                  )
+                )}
+              </Table.Body>
+            </Table >
+          </div >
+        </div>
+        <div>
+          <Container>
+            <Modal isOpen={openModal} onRequestClose={() => setupCtx.openRepoModal(false)}
+              style={{
+                overlay: {
+                  backgroundColor: 'rgba(155, 155, 155, 0.5)'
+                },
+                content: {
+                  borderRadius: '10px',
+                  top: '90px',
+                  border: '1px solid black',
+                  width: '500px',
+                  margin: '0 auto',
+                  height: '410px'
+                }
+              }}
+            >
+              <div className='modalHeader'>
+                <h1 className="repoModalH1">Update Repository:</h1>
+                <p className="repoModalP">{state.repoName}</p>
               </div>
-              <div>
-                <label className="inputLabel">Search Keywords</label>
-                <input className="urlBox" name="keywords" label='Keywords: ' placeholder={state.keywords} value={state.value} onChange={!isLoggedIn ? null : (event) => handleLinkChange(event)} />
-              </div>
-              {isLoggedIn && (
-                <Button color="teal" fluid active
-                  type="submit"
-                >
-                  Update
-                </Button>
-              )}
-            </form>
-            {!isLoggedIn &&
-              (
-                <div className="createAccount">
-                  <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
+              <List as="ul" bulleted inverted className="bList">
+                <List.Item as="li">Enter the project description and website in GitHub.</List.Item>
+                <List.Item as="li">Image width/height ratio should be 3:2.</List.Item>
+              </List>
+              <form>
+                <label className="inputLabel">Current Display Status: {state.activeFlag}</label>
+                <Checkbox
+                  className="inputLabel"
+                  label='Display'
+                  checked={state.activeFlag === 'true'}
+                  onChange={!isLoggedIn ? null : () => updateFlag(state.rowClick)}
+                />
+                <hr />
+              </form>
+              <form onSubmit={(event) => handleLinkUpdate(event)}>
+                <div>
+                  <label className="inputLabel">Current Image Link</label>
+                  <input className="urlBox" name="imageLink" placeholder={state.imageLink} value={state.value} onChange={!isLoggedIn ? null : (event) => handleLinkChange(event)} />
                 </div>
-              )}
-          </Modal>
-        </Container>
+                <div>
+                  <label className="inputLabel">Search Keywords</label>
+                  <input className="urlBox" name="keywords" label='Keywords: ' placeholder={state.keywords} value={state.value} onChange={!isLoggedIn ? null : (event) => handleLinkChange(event)} />
+                </div>
+                {isLoggedIn && (
+                  <Button color="teal" fluid active
+                    type="submit"
+                  >
+                    Update
+                  </Button>
+                )}
+              </form>
+              {!isLoggedIn &&
+                (
+                  <div className="createAccount">
+                    <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
+                  </div>
+                )}
+            </Modal>
+          </Container>
+        </div>
       </div>
     </Fragment >
   );

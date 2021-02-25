@@ -45,6 +45,7 @@
 .ui.grid > .row {
   padding-top: 0rem;
   margin-bottom: 25px;
+  width: 84%;
 }
 
 div.description.cardDescription {

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from 'semantic-ui-react';
+import DevBackground from '../components/DevBackGround'
 import DevNav from "../components/DevNav";
 import DevHeader from "../components/DevHeader";
 import DevContainer from '../components/DevContainer'
@@ -9,7 +10,7 @@ import LogoutModal from '../components/LogoutForm/LogoutModal'
 import Spinner from '../components/Spinner'
 // import SettingsModal from '../components/Settings/SettingsModal'
 
-import "./developer.css";
+// import "./developer.css";
 
 function Developer() {
   // let isLoggedIn = JSON.parse(localStorage.getItem('jtsy-login'))
@@ -20,6 +21,7 @@ function Developer() {
 
   return (
     <div className="devPage">
+      <DevBackground />
       <DevNav />
       <Container>
         <DevHeader className="welcome" />

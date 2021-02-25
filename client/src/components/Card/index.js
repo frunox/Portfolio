@@ -4,8 +4,8 @@ import './cardStyle.css'
 
 const ProjectCard = props => {
   return (
-    <Card.Group className="repoCard" stackable centered>
-      <Card className="card" raised>
+    <Card.Group className="repoCard" stackable>
+      <Card className="card">
         <Image src={props.repo.imageLink}
           as='a'
           wrapped
@@ -18,10 +18,10 @@ const ProjectCard = props => {
         </Card.Content>
         <Card.Content extra>
           <div className='ui two buttons'>
-            <Button basic color='teal' target={"_blank"} href={props.repo.html_url}>
+            <Button basic color='blue' target={"_blank"} href={props.repo.html_url}>
               Code
             </Button>
-            {props.repo.deploymentLink ? <Button basic color='teal' target={"_blank"} href={props.repo.deploymentLink}>
+            {props.repo.deploymentLink ? <Button basic color='blue' target={"_blank"} href={props.repo.deploymentLink}>
               Link
           </Button> : <Button basic color='red' target={"_blank"} href={props.repo.deploymentLink}>
                 Link
