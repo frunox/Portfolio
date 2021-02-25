@@ -199,10 +199,11 @@ const DevNav = () => {
         </Menu.Menu>
       </Menu>
 
-      <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
+      <Modal className='userModal' isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
         style={{
           overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)'
+            backgroundColor: 'rgba(155, 155, 155, 0.5)',
+            zIndex: '100'
           },
           content: {
             borderRadius: '10px',
@@ -210,7 +211,8 @@ const DevNav = () => {
             border: '1px solid black',
             width: '500px',
             margin: '0 auto',
-            height: '440px'
+            height: '440px',
+            zIndex: '100'
           }
         }}
       >
@@ -283,7 +285,8 @@ const DevNav = () => {
       <Modal isOpen={openSync} onRequestClose={() => setupCtx.openSyncModal(false)}
         style={{
           overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)'
+            backgroundColor: 'rgba(155, 155, 155, 0.5)',
+            zIndex: '100'
           },
           content: {
             borderRadius: '10px',
@@ -291,7 +294,8 @@ const DevNav = () => {
             border: '1px solid black',
             width: '350px',
             margin: '0 auto',
-            height: '180px'
+            height: '180px',
+            zIndex: '100'
           }
         }}
       >

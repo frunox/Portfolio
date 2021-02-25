@@ -304,19 +304,22 @@ const DevTable = () => {
           </div >
         </div>
         <div>
-          <Container>
+          <Container className='repoModal'>
             <Modal isOpen={openModal} onRequestClose={() => setupCtx.openRepoModal(false)}
               style={{
                 overlay: {
-                  backgroundColor: 'rgba(155, 155, 155, 0.5)'
+                  backgroundColor: 'rgba(155, 155, 155, 0.5)',
+                  zIndex: '100'
                 },
                 content: {
                   borderRadius: '10px',
+                  position: 'relative',
                   top: '90px',
                   border: '1px solid black',
                   width: '500px',
                   margin: '0 auto',
-                  height: '410px'
+                  height: '410px',
+                  zIndex: '100'
                 }
               }}
             >
