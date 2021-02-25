@@ -7,7 +7,7 @@ import AboutUser from "../components/AboutUser";
 
 function About() {
   return (
-    <div className="about">
+    <div>
       <Background />
       <HomeNav />
       <AboutUser />

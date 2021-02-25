@@ -1,5 +1,7 @@
-.cText {
-  padding-top: 30px;
+.devContainer {
+  position: relative;
+  top: 85px;
+  z-index: 10;
 }
 
 li {
