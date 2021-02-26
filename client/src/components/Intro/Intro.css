@@ -1,9 +1,10 @@
 .intro {
   width: 75%;
   position: relative;
-  top: 92px;
+  top: 110px;
   left: 10%;
   width: 80%;
+  padding: 1rem;
   z-index: 10;
   border-radius: 1rem;
   background: linear-gradient(
