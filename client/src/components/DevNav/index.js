@@ -199,93 +199,96 @@ const DevNav = () => {
         </Menu.Menu>
       </Menu>
 
-      <Modal className='userModal' isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
-        style={{
-          overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)',
-            zIndex: '100'
-          },
-          content: {
-            borderRadius: '10px',
-            top: '90px',
-            border: '1px solid black',
-            width: '500px',
-            margin: '0 auto',
-            height: '440px',
-            zIndex: '100'
-          }
-        }}
-      >
-        <h1>Revise User Information</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="firstName">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              placeholder={state.firstName}
-              type="text"
-              name="firstName"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="lastName">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              placeholder={state.lastName}
-              type="text"
-              name="lastName"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="email">
-            <label htmlFor="email">Email</label>
-            <input
-              placeholder={state.email}
-              type="email"
-              name="email"
-              onChange={handleChange}
-            />
-          </div>
-          {/* LinkedIn */}
-          <div className="linkedInLink">
-            <label htmlFor="linkedInLink">LinkedIn link</label>
-            <input
-              placeholder={state.linkedInLink}
-              type="text"
-              name="linkedInLink"
-              onChange={handleChange}
-            />
-          </div>
-          {/* LinkedIn */}
-          {/* resume */}
-          <div className="resumeLink">
-            <label htmlFor="resumeLink">Resume Link</label>
-            <input
-              placeholder={state.resumeLink}
-              type="text"
-              name="resumeLink"
-              onChange={handleChange}
-            />
-          </div>
-          {console.log('DEVNAV Button', isLoggedIn)}
-          {isLoggedIn && (
-            <div className="createAccount">
-              <Button color='teal' type="submit">Change Settings</Button>
-            </div>)
-          }
-        </form>
-        {console.log('DEVNAV isLoggedIn', isLoggedIn)}
-        {!isLoggedIn &&
-          (
-            <div className="createAccount">
-              <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
+      <div className='form-wrapper'>
+        <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
+          style={{
+            overlay: {
+              backgroundColor: 'rgba(0, 0, 255, 0.5)',
+              zIndex: '100'
+            },
+            content: {
+              backgroundColor: 'white',
+              borderRadius: '10px',
+              position: 'relative',
+              top: '90px',
+              border: '1px solid black',
+              width: '500px',
+              margin: '0 auto',
+              height: '440px',
+            }
+          }}
+        >
+          <h1>Revise User Information</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="firstName">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                placeholder={state.firstName}
+                type="text"
+                name="firstName"
+                onChange={handleChange}
+              />
             </div>
-          )}
-      </Modal>
+            <div className="lastName">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                placeholder={state.lastName}
+                type="text"
+                name="lastName"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="email">
+              <label htmlFor="email">Email</label>
+              <input
+                placeholder={state.email}
+                type="email"
+                name="email"
+                onChange={handleChange}
+              />
+            </div>
+            {/* LinkedIn */}
+            <div className="linkedInLink">
+              <label htmlFor="linkedInLink">LinkedIn link</label>
+              <input
+                placeholder={state.linkedInLink}
+                type="text"
+                name="linkedInLink"
+                onChange={handleChange}
+              />
+            </div>
+            {/* LinkedIn */}
+            {/* resume */}
+            <div className="resumeLink">
+              <label htmlFor="resumeLink">Resume Link</label>
+              <input
+                placeholder={state.resumeLink}
+                type="text"
+                name="resumeLink"
+                onChange={handleChange}
+              />
+            </div>
+            {console.log('DEVNAV Button', isLoggedIn)}
+            {isLoggedIn && (
+              <div className="createAccount">
+                <Button color='blue' type="submit">Change Settings</Button>
+              </div>)
+            }
+          </form>
+          {console.log('DEVNAV isLoggedIn', isLoggedIn)}
+          {!isLoggedIn &&
+            (
+              <div className="createAccount">
+                <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
+              </div>
+            )}
+        </Modal>
+      </div>
 
       <Modal isOpen={openSync} onRequestClose={() => setupCtx.openSyncModal(false)}
         style={{
           overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)',
+            backgroundColor: 'rgba(0, 0, 255, 0.5)',
             zIndex: '100'
           },
           content: {
