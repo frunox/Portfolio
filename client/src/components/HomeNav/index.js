@@ -1,11 +1,11 @@
-import React from 'react';
-// import DevDataContext from "../../contexts/DevDataContext";
+import React, { useContext } from 'react';
+import DevDataContext from "../../contexts/DevDataContext";
 // import SetupContext from "../../contexts/SetupContext";
 import { Menu } from 'semantic-ui-react';
 import "./HomeNav.css";
 
 const HomeNav = () => {
-  // const devCtx = useContext(DevDataContext);
+  const devCtx = useContext(DevDataContext);
   // const setupCtx = useContext(SetupContext);
   // console.log('HOMENAV some devData: ', devCtx.state.fname)
   // console.log('HOMENAV setupCtx', setupCtx);
@@ -16,7 +16,7 @@ const HomeNav = () => {
   let content = (
     <div>
       <Menu inverted stackable fixed="top" className="menu">
-        <Menu.Item header className="logo">My Name</Menu.Item>
+        <Menu.Item header className="logo">{devCtx.state.fname} {devCtx.state.lname}</Menu.Item>
         <Menu.Menu position="left">
           <Menu.Item as="a" href="/" name="home">
           </Menu.Item>
