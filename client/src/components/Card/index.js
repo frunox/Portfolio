@@ -18,12 +18,12 @@ const ProjectCard = props => {
         </Card.Content>
         <Card.Content extra>
           <div className='ui two buttons'>
-            <Button basic color='blue' target={"_blank"} href={props.repo.html_url}>
+            <Button color='blue' target={"_blank"} href={props.repo.html_url}>
               Code
             </Button>
-            {props.repo.deploymentLink ? <Button basic color='blue' target={"_blank"} href={props.repo.deploymentLink}>
-              Link
-          </Button> : <Button basic color='red' target={"_blank"} href={props.repo.deploymentLink}>
+            {props.repo.deploymentLink ? <Button color='green' target={"_blank"} href={props.repo.deploymentLink}>
+              Website
+          </Button> : <Button color='red' target={"_blank"} href={props.repo.deploymentLink}>
                 Link
           </Button>}
           </div>

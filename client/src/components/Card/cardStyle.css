@@ -5,11 +5,12 @@
   justify-content: space-around;
   height: 360px;
   z-index: 10;
+  border: none;
 }
 
-/* .card {
-  flex: 0 1 95%;
-} */
+.card {
+  filter: drop-shadow(6px 6px 12px rgba(75, 75, 75, 0.8));
+}
 
 .ui.card > .content,
 .ui.cards > .card > .content {
