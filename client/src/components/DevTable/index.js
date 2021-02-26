@@ -308,22 +308,25 @@ const DevTable = () => {
             <Modal isOpen={openModal} onRequestClose={() => setupCtx.openRepoModal(false)}
               style={{
                 overlay: {
-                  backgroundColor: 'rgba(155, 155, 155, 0.5)'
+                  backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                  zIndex: '1000'
                 },
                 content: {
                   borderRadius: '10px',
+                  position: 'relative',
                   top: '90px',
                   border: '1px solid black',
                   width: '500px',
                   margin: '0 auto',
-                  height: '410px'
+                  height: '410px',
+                  overflow: 'unset'
                 }
               }}
             >
-              <div className='modalHeader'>
-                <h1 className="repoModalH1">Update Repository:</h1>
-                <p className="repoModalP">{state.repoName}</p>
+              <div>
+                <h1>{state.repoName}</h1>
               </div>
+              <p></p>
               <List as="ul" bulleted inverted className="bList">
                 <List.Item as="li">Enter the project description and website in GitHub.</List.Item>
                 <List.Item as="li">Image width/height ratio should be 3:2.</List.Item>
@@ -348,7 +351,7 @@ const DevTable = () => {
                   <input className="urlBox" name="keywords" label='Keywords: ' placeholder={state.keywords} value={state.value} onChange={!isLoggedIn ? null : (event) => handleLinkChange(event)} />
                 </div>
                 {isLoggedIn && (
-                  <Button color="teal" fluid active
+                  <Button color="blue" fluid active
                     type="submit"
                   >
                     Update

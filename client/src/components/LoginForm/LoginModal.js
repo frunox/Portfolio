@@ -71,7 +71,8 @@ const LoginModal = () => {
         // shouldCloseOnOverlayClick={false}
         style={{
           overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)'
+            backgroundColor: 'rgba(0, 0, 255, 0.5)',
+            zIndex: '100'
           },
           content: {
             borderRadius: '10px',
@@ -80,7 +81,6 @@ const LoginModal = () => {
             width: '400px',
             margin: '0 auto',
             height: '400px',
-            zIndex: '100'
           }
         }}
       >

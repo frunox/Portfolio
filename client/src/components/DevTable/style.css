@@ -1,6 +1,6 @@
-.devPage {
-  z-index: 10;
-}
+/* .devPage {
+  z-index: 0;
+} */
 
 .tableContent {
   position: relative;
@@ -17,10 +17,6 @@ hr {
   overflow-y: scroll; /* or auto */
   width: 90%;
   margin-left: 5%;
-}
-
-.repoModal {
-  height: 'min-content';
 }
 
 .formBox {
@@ -63,17 +59,18 @@ hr {
 
 /* // MODAL */
 
-.modalHeader {
+.repoModalHeader {
   text-align: center;
 }
 
-.modalHeader h1 {
-  margin: 0;
+.repoModalHeader h1 {
+  margin: 0 0 15px;
 }
 
-.modalHeader p {
+.repoModalP {
   font-size: 1.5rem;
   font-weight: bold;
+  color: blue;
 }
 
 .ui.modal {
