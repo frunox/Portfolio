@@ -8,7 +8,7 @@ function AboutUser() {
     // console.log("ABOUTUSER devCtx", devCtx)
     return (
         <Fragment>
-            <Container className="grid">
+            <Container className="aboutUser">
                 <div className='ui middle aligned two column grid'>
                     <h3>About {devCtx.state.fname} {devCtx.state.lname}</h3>
                     <Grid.Row className='aboutCard' style={{ padding: 0, }}>
@@ -20,26 +20,27 @@ function AboutUser() {
                                 <li className='cardLi'>Courses in TypeScript, Ionic, Advanced JavaScript, GraphQL, Docker/Kubernetes</li>
                                 <li className='cardLi'>Google Cloud, Firebase, Firestore</li>
                                 <li className='cardLi'>Image Creation/Manipulation, GIMP</li>
-                                <p>See my <a className="links" href={"https://drive.google.com/file/d/1126gWTyAZ6ycD46EI_B44Gy3IBwgyNw8/view?usp=sharing"} rel="noopener noreferrer" target="_blank"> Resume</a></p>
+                                <p className='sectionP'>See my <a className="links" href={"https://drive.google.com/file/d/1126gWTyAZ6ycD46EI_B44Gy3IBwgyNw8/view?usp=sharing"} rel="noopener noreferrer" target="_blank"> Resume</a></p>
 
                             </div>
                             {/* <p><a className="links" href={devData.portfolioLink} rel="noopener noreferrer" target="_blank">Portfolio</a></p> */}
                         </Grid.Column>
                         <Grid.Column width={4}>
-                            <Image className="aboutImage" src='https://i.ibb.co/bW5z1PX/Vermilion-Sunset-1-crop.jpg' />
+                            <Image className="aboutImage1" src='https://i.ibb.co/bW5z1PX/Vermilion-Sunset-1-crop.jpg' />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row className='aboutCard row2' style={{ padding: 0, }}>
                         <Grid.Column width={5}>
-                            <Image className='aboutImage' src='https://i.ibb.co/10QLhFw/Waterfall-crop.jpg' />
+                            <Image className='aboutImage2' src='https://i.ibb.co/10QLhFw/Waterfall-crop.jpg' />
                         </Grid.Column>
                         <Grid.Column className="aboutSection2" width={11}>
-                            <p className="sectionP"> I am a former environmental engineer who has re-trained myself.  There are many skills that transfer from that experience:</p>
+                            <p className="sectionP"> I am a former environmental engineer.  Many skills that transfer from that experience:</p>
                             <li className='cardLi'>Project Management, Planning, Budgeting, Marketing</li>
                             <li className='cardLi'>Technical Writing, Computer-Aided Design, Preparation of Plans and Specifications</li>
                             <li className='cardLi'>Coordination with Multidisciplinary Groups</li>
+                            <li className='cardLi'>Budgeting, Cost Control, Soliciting Bids</li>
                             <li className='cardLi'>Liaison with Regulatory Agencies</li>
-                            <li className='cardLi'>Construction Management and Certification</li>
+                            <li className='cardLi'>Construction Oversight and Certification</li>
                         </Grid.Column>
                     </Grid.Row>
 

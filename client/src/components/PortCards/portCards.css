@@ -1,21 +1,15 @@
-/* 
-.cards {
-  background-color: red;
-  color: darkslategrey;
-  border-color: darkgrey;
-  border-style: solid;
-  border-radius: 10px;
-  padding: 10px;  
-}  */
-
-/* .rows {
-  margin-bottom: 15px;
-} */
-
 .portCards {
-  margin-top: 90px;
+  position: relative;
+  top: 190px;
+  left: 10%;
+  width: 80%;
 }
 
 .columns {
   margin-bottom: 25px;
 }
+/* 
+.glass.div.ui.equal.width.grid.stackable {
+  position: relative;
+  left: 10%;
+} */

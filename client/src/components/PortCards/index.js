@@ -9,19 +9,19 @@ function PortCards() {
   console.log('PORTCARDS dev', devCtx)
   return (
     <div className='portCards'>
-      <Grid container stackable>
+      <div className='ui equal width grid stackable'>
         <Grid.Row className="rows">
           {devCtx.state.repositories
             .filter(repo => repo.activeFlag === 'true')
             .map((repo, index) => (
 
-              <Grid.Column key={index} computer={5} table={8} className="columns">
-                <ProjectCard fluid repo={repo} />
+              <Grid.Column key={index} stretched className="columns">
+                <ProjectCard repo={repo} />
               </Grid.Column>
 
             ))}
         </Grid.Row>
-      </Grid>
+      </div>
     </div>
   );
 }

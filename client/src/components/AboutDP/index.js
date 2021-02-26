@@ -7,7 +7,7 @@ function AboutDP() {
 
   return (
 
-    <div className="aboutContainer aboutWrapper">
+    <div className="aboutContainer">
       <div className="container">
         <h3 className="title">About Dynamic Portfolio</h3>
 
