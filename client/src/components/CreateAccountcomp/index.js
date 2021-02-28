@@ -57,8 +57,6 @@ const CreateAccountComp = (props) => {
       resumeLink: state.resumeLink,
       active: true
     }
-    localStorage.setItem('dynamic-fname', developerData.fname);
-    localStorage.setItem('dynamic-lname', developerData.lname);
     console.log('in createAcctComp: call updateDeveloper', developerData);
     localStorage.setItem('dynamic-fname', developerData.fname);
     localStorage.setItem('dynamic-lname', developerData.lname);
@@ -74,7 +72,7 @@ const CreateAccountComp = (props) => {
     setState({ ...state, [name]: value });
   };
   let content = (
-    <div className="wrapper">
+    <div className="wrapper background">
       <div className="form-wrapper">
         <h1>Create Account</h1>
         <h4>* - Denotes Required Field</h4>
