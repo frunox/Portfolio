@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import Modal from 'react-modal';
-import { Button } from 'semantic-ui-react'
 import { Redirect, useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import './styles.css'

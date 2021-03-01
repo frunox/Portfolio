@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Button } from 'semantic-ui-react'
 import Modal from 'react-modal';
 import { useHistory } from 'react-router-dom';
 import md5 from 'blueimp-md5';
@@ -71,7 +72,7 @@ const LoginModal = () => {
         // shouldCloseOnOverlayClick={false}
         style={{
           overlay: {
-            backgroundColor: 'rgba(155, 155, 155, 0.5)',
+            backgroundColor: 'rgba(0, 0, 255, 0.5)',
             zIndex: '100'
           },
           content: {
@@ -81,7 +82,6 @@ const LoginModal = () => {
             width: '400px',
             margin: '0 auto',
             height: '400px',
-            zIndex: '100'
           }
         }}
       >
@@ -112,7 +112,7 @@ const LoginModal = () => {
             />
           </div>
           <div className="createAccount">
-            <button type="submit">Log In</button>
+            <button color='blue' type="submit">Log In</button>
           </div>
         </form>
         <div className="returnButton">
