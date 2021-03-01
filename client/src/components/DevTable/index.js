@@ -309,7 +309,7 @@ const DevTable = () => {
               style={{
                 overlay: {
                   backgroundColor: 'rgba(0, 0, 255, 0.5)',
-                  zIndex: '1000'
+                  zIndex: '10'
                 },
                 content: {
                   borderRadius: '10px',
