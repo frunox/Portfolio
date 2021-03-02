@@ -5,4 +5,7 @@ const repositoriesController = require("../../controllers/repositoriesController
 console.log('&&& in repositories.js, post updateRepositories');
 router.route("/:id").post(repositoriesController.updateRepositories);
 
+// find 1 repo to determine if Repositories collection is populated
+router.route("/findRepo").get(repositoriesController.findRepo);
+
 module.exports = router;

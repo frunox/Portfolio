@@ -45,7 +45,15 @@ export default {
   // Call this function to find the active Developer.  You do not need to pass anything in.  If none are active, it is not setup yet.
 
   getsync: function (githubID) {
-    console.log('8. in API.js getsync (util route)', githubID)
+    console.log('8e. in API.js getsync (util route)', githubID)
     return axios.post("/util/sync/" + githubID);
   },
+
+  // check for a repo to determine if a user is a visitor
+  findRepo: function () {
+    console.log('8f. in API.js findRepo (repo route)')
+    return axios.get("/api/repositories/findRepo");
+  },
 };
+
+
