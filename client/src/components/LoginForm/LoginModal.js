@@ -77,7 +77,7 @@ const LoginModal = () => {
 
   let content = (
     <div>
-      { localStorage.getItem('dynamic-status') === 'user' ?
+      { localStorage.getItem('jtsy-signin') === 'true' ?
         <Modal isOpen={openModal} onRequestClose={() => setupCtx.openLoginModal(false)}
           // shouldCloseOnOverlayClick={false}
           style={{

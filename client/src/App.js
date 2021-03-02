@@ -58,22 +58,42 @@ const App = () => {
       }
       console.log("APP sign-in = true")
     }
-  }, [])
+  }, [devCtx])
 
 
   useEffect(() => {
     if (!state.initialized) {
       API.findRepo()
         .then((repo) => {
-          localStorage.setItem('jtsy-signin', 'true')
-          console.log('APP signin = false found 1 repo', repo)
-          if (repo) {
+
+          console.log('APP signin = false found 1 repo', repo.data)
+          if (repo.data) {
             setState({
               ...state,
               initialized: true
             })
+            localStorage.setItem('jtsy-signin', 'true')
             console.log('1 REPO initialized', state.initialized)
             // console.log('APP devUpdated', setupCtx.state.devUpdated)
+            API.getActiveDevData().then((activeDevData) => {
+              // console.log('APP activeDevData', activeDevData.data);
+              const developerData = {
+                developerLoginName: activeDevData.data.developerLoginName,
+                developerGithubID: activeDevData.data.developerGithubID,
+                repositories: activeDevData.data.repositories,
+                fname: activeDevData.data.fname,
+                lname: activeDevData.data.lname,
+                email: activeDevData.data.email,
+                linkedInLink: activeDevData.data.linkedInLink,
+                resumeLink: activeDevData.data.resumeLink,
+                active: true
+              }
+              console.log('APP after DB call', developerData)
+              // update dev context with current user
+              devCtx.updateDev(developerData)
+              setupCtx.updateInitialized();
+              setupCtx.updateDevUpdated(false)
+            })
           } else {
             setState({
               ...state,
@@ -82,28 +102,6 @@ const App = () => {
             console.log('APP no user, no repos, to CAC')
           }
         })
-    }
-
-    if (localStorage.getItem("jtsy-signin") === "true") {
-      API.getActiveDevData().then((activeDevData) => {
-        // console.log('APP activeDevData', activeDevData.data);
-        const developerData = {
-          developerLoginName: activeDevData.data.developerLoginName,
-          developerGithubID: activeDevData.data.developerGithubID,
-          repositories: activeDevData.data.repositories,
-          fname: activeDevData.data.fname,
-          lname: activeDevData.data.lname,
-          email: activeDevData.data.email,
-          linkedInLink: activeDevData.data.linkedInLink,
-          resumeLink: activeDevData.data.resumeLink,
-          active: true
-        }
-        console.log('APP after DB call', developerData)
-        // update dev context with current user
-        devCtx.updateDev(developerData)
-        setupCtx.updateInitialized();
-        setupCtx.updateDevUpdated(false)
-      })
     }
   }, [setupCtx.state.devUpdated])
 
@@ -233,7 +231,7 @@ const App = () => {
       <React.Fragment>
         <Router>
           <Switch>
-            {console.log('IN APP SWITCH initialized', state.initialized)}
+            {console.log('IN APP SWITCH initialized', state.initialized, JSON.parse(localStorage.getItem("jtsy-signin")))}
             {state.initialized ? (
               <Route exact path="/" component={Home} />
             ) : (
