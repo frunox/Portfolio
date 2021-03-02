@@ -20,7 +20,8 @@ const App = () => {
   const [state, setState] = useState(
     {
       loggedIn: null,
-      sync: false
+      sync: false,
+      initialized: null
     }
   )
 
@@ -46,45 +47,150 @@ const App = () => {
 
 
   // variable to control routing
-  let initialized = false;
-  if (localStorage.getItem("jtsy-signin") === "true") {
-    initialized = true;
-  }
+  // let initialized = null;
+  useEffect(() => {
+    console.log("APP, looking for repo")
+    if (localStorage.getItem("jtsy-signin") === "true") {
+      // there is a dev
+      setState({
+        ...state,
+        initialized: true
+      })
+    } else {
+      API.findRepo()
+        .then((repo) => {
+          console.log('APP found 1 repo', repo)
+          if (repo) {
+            setState({
+              ...state,
+              initialized: true
+            })
+            localStorage.setItem('jtsy-signin', 'true')
+            console.log('1 REPO initialized', state.initialized)
+            if (localStorage.getItem('jtsy-login') === 'true') {
+              setupCtx.updateLoggedIn();
+            }
+            // console.log('APP devUpdated', setupCtx.state.devUpdated)
+            if (setupCtx.state.devUpdated) {
+              API.getActiveDevData().then((activeDevData) => {
+                // console.log('APP activeDevData', activeDevData.data);
+                const developerData = {
+                  developerLoginName: activeDevData.data.developerLoginName,
+                  developerGithubID: activeDevData.data.developerGithubID,
+                  repositories: activeDevData.data.repositories,
+                  fname: activeDevData.data.fname,
+                  lname: activeDevData.data.lname,
+                  email: activeDevData.data.email,
+                  linkedInLink: activeDevData.data.linkedInLink,
+                  resumeLink: activeDevData.data.resumeLink,
+                  active: true
+                }
+                console.log('APP after DB call', developerData)
+                // update dev context with current user
+                devCtx.updateDev(developerData)
+                setupCtx.updateInitialized();
+                setupCtx.updateDevUpdated(false)
+              })
+            }
+          } else {
+            setState({
+              ...state,
+              initialized: false
+            })
+          }
+        })
+    }
+    // if (state.initialized) {
+    //   console.log('APP useEffect signin=true, redirect to Home page');
+    //   if (localStorage.getItem('jtsy-login') === 'true') {
+    //     setupCtx.updateLoggedIn();
+    //   }
+    //   // console.log('APP devUpdated', setupCtx.state.devUpdated)
+    //   if (setupCtx.state.devUpdated) {
+    //     API.getActiveDevData().then((activeDevData) => {
+    //       // console.log('APP activeDevData', activeDevData.data);
+    //       const developerData = {
+    //         developerLoginName: activeDevData.data.developerLoginName,
+    //         developerGithubID: activeDevData.data.developerGithubID,
+    //         repositories: activeDevData.data.repositories,
+    //         fname: activeDevData.data.fname,
+    //         lname: activeDevData.data.lname,
+    //         email: activeDevData.data.email,
+    //         linkedInLink: activeDevData.data.linkedInLink,
+    //         resumeLink: activeDevData.data.resumeLink,
+    //         active: true
+    //       }
+    //       console.log('APP after DB call', developerData)
+    //       // update dev context with current user
+    //       devCtx.updateDev(developerData)
+    //       setupCtx.updateInitialized();
+    //       setupCtx.updateDevUpdated(false)
+    //     })
+    //   }
+    // };
+  }, [])
+
+
+
+
+
 
   // If user is active, update devDataContext and set initialized = true
-  useEffect(() => {
-    if (initialized) {
-      // console.log('APP useEffect signin=true, redirect to Home page');
-      if (localStorage.getItem('jtsy-login') === 'true') {
-        setupCtx.updateLoggedIn();
-      }
-      // console.log('APP devUpdated', setupCtx.state.devUpdated)
-      if (setupCtx.state.devUpdated) {
-        API.getActiveDevData().then((activeDevData) => {
-          // console.log('APP activeDevData', activeDevData.data);
+  // useEffect(() => {
+  //   console.log('APP useEffect to get dev data')
+  //   // there is no dev - check for repos.  If yes, user is a visitor, if not, create account
 
-          const developerData = {
-            developerLoginName: activeDevData.data.developerLoginName,
-            developerGithubID: activeDevData.data.developerGithubID,
-            repositories: activeDevData.data.repositories,
-            fname: activeDevData.data.fname,
-            lname: activeDevData.data.lname,
-            email: activeDevData.data.email,
-            linkedInLink: activeDevData.data.linkedInLink,
-            resumeLink: activeDevData.data.resumeLink,
-            active: true
-          }
-          console.log('APP after DB call', developerData)
-          // update dev context with current user
-          devCtx.updateDev(developerData)
-          setupCtx.updateInitialized();
-          setupCtx.updateDevUpdated(false)
-        })
-      }
-    };
-  }, [setupCtx.state.devUpdated])
+  //   if (state.initialized) {
+  //     console.log('APP useEffect signin=true, redirect to Home page');
+  //     if (localStorage.getItem('jtsy-login') === 'true') {
+  //       setupCtx.updateLoggedIn();
+  //     }
+  //     // console.log('APP devUpdated', setupCtx.state.devUpdated)
+  //     if (setupCtx.state.devUpdated) {
+  //       API.getActiveDevData().then((activeDevData) => {
+  //         // console.log('APP activeDevData', activeDevData.data);
+  //         const developerData = {
+  //           developerLoginName: activeDevData.data.developerLoginName,
+  //           developerGithubID: activeDevData.data.developerGithubID,
+  //           repositories: activeDevData.data.repositories,
+  //           fname: activeDevData.data.fname,
+  //           lname: activeDevData.data.lname,
+  //           email: activeDevData.data.email,
+  //           linkedInLink: activeDevData.data.linkedInLink,
+  //           resumeLink: activeDevData.data.resumeLink,
+  //           active: true
+  //         }
+  //         console.log('APP after DB call', developerData)
+  //         // update dev context with current user
+  //         devCtx.updateDev(developerData)
+  //         setupCtx.updateInitialized();
+  //         setupCtx.updateDevUpdated(false)
+  //       })
+  //     }
+  //   };
+  // }, [setupCtx.state.devUpdated])
 
   // console.log('APP initialized', initialized)
+
+  // const getDev = () => {
+  //   API.getActiveDevData().then((activeDevData) => {
+  //     // console.log('APP activeDevData', activeDevData.data);
+  //     const developerData = {
+  //       developerLoginName: activeDevData.data.developerLoginName,
+  //       developerGithubID: activeDevData.data.developerGithubID,
+  //       repositories: activeDevData.data.repositories,
+  //       fname: activeDevData.data.fname,
+  //       lname: activeDevData.data.lname,
+  //       email: activeDevData.data.email,
+  //       linkedInLink: activeDevData.data.linkedInLink,
+  //       resumeLink: activeDevData.data.resumeLink,
+  //       active: true
+  //     }
+  //     console.log('APP after DB call', developerData)
+  //     // update dev context with current user
+  //     devCtx.updateDev(developerData)
+  //   })
+  // }
 
   return (
     <div className='App'>
@@ -92,7 +198,8 @@ const App = () => {
       <React.Fragment>
         <Router>
           <Switch>
-            {initialized ? (
+            {console.log('IN APP SWITCH initialized', state.initialized)}
+            {state.initialized ? (
               <Route exact path="/" component={Home} />
             ) : (
                 <Route exact path="/" component={CreateAccountComp} />
