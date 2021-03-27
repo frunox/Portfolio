@@ -1,3 +1,165 @@
-.item {
-  font-size: 1.4rem;
+/* navigation styles start here */
+
+.homenav-header {
+  background: black;
+  height: 55px;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  color: white;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* .homenav-logo {
+  position: relative;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: 2em;
+} */
+
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* draw the hamburger */
+.navbar-toggle-label span,
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.navbar-toggle-label span::before {
+  bottom: 7px;
+}
+
+.navbar-toggle-label span::after {
+  top: 7px;
+}
+
+/* end of hamburger */
+
+.navbar-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 300ms ease-in-out;
+}
+
+.navbar-nav ul {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.2em;
+  list-style: none;
+}
+
+.navbar-nav li {
+  margin-bottom: 8px;
+  margin-left: 1em;
+}
+
+.navbar-nav a {
+  color: white;
+  margin-bottom: 1.5em;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.navbar-nav a:hover {
+  color: blue;
+}
+
+.navbar-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.navbar-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 200ms ease-in-out 150ms;
+}
+
+@media screen and (min-width: 800px) {
+  .navbar-toggle-label {
+    display: none;
+  }
+
+  .homenav-header {
+    display: grid;
+    grid-template-columns: 50px 250px auto 440px;
+  }
+
+  .navbar-nav {
+    all: unset;
+    grid-column: 4 / 5;
+    display: flex;
+    justify-items: flex-end;
+    align-items: center;
+  }
+
+  .user-name {
+    grid-column: 2/3;
+    display: flex;
+    align-items: center;
+  }
+
+  /* .homenav-logo {
+    grid-column: 2 / 3;
+    margin-left: 1em;
+  } */
+
+  .navbar-nav a {
+    opacity: 1;
+  }
+
+  .navbar-nav a:hover {
+    color: blue;
+  }
+
+  .navbar-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+.navbar-nav li {
+  margin: 0;
 }
