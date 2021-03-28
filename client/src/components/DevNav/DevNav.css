@@ -1,6 +1,6 @@
 /* navigation styles start here */
 
-.homenav-header {
+.devnav-header {
   background: black;
   height: 55px;
   position: fixed;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.user-name {
+.portfolio-name {
   color: white;
   margin-bottom: 0;
   font-style: italic;
@@ -27,11 +27,11 @@
   margin-left: 2em;
 } */
 
-.navbar-toggle {
+.devnav-toggle {
   display: none;
 }
 
-.navbar-toggle-label {
+.devnav-toggle-label {
   position: absolute;
   top: 0;
   left: 0;
@@ -42,9 +42,9 @@
 }
 
 /* draw the hamburger */
-.navbar-toggle-label span,
-.navbar-toggle-label span::before,
-.navbar-toggle-label span::after {
+.devnav-toggle-label span,
+.devnav-toggle-label span::before,
+.devnav-toggle-label span::after {
   display: block;
   background: white;
   height: 2px;
@@ -53,23 +53,23 @@
   position: relative;
 }
 
-.navbar-toggle-label span::before,
-.navbar-toggle-label span::after {
+.devnav-toggle-label span::before,
+.devnav-toggle-label span::after {
   content: '';
   position: absolute;
 }
 
-.navbar-toggle-label span::before {
+.devnav-toggle-label span::before {
   bottom: 7px;
 }
 
-.navbar-toggle-label span::after {
+.devnav-toggle-label span::after {
   top: 7px;
 }
 
 /* end of hamburger */
 
-.navbar-nav {
+.devnav-nav {
   position: absolute;
   top: 100%;
   left: 0;
@@ -80,18 +80,19 @@
   transition: transform 300ms ease-in-out;
 }
 
-.navbar-nav ul {
+.devnav-nav ul {
   margin: 0;
-  padding: 0;
-  padding-bottom: 0.2em;
+  padding: 0.3em 0;
   list-style: none;
 }
 
-.navbar-nav li {
+.devnav-nav li {
   margin-bottom: 8px;
+  margin-left: 1em;
+  padding-bottom: 0.2em;
 }
 
-.navbar-nav a {
+.devnav-nav a {
   color: white;
   margin-bottom: 1.5em;
   text-decoration: none;
@@ -101,58 +102,74 @@
   transition: opacity 150ms ease-in-out;
 }
 
-.navbar-nav a:hover {
+.devnav-nav a:hover {
   color: blue;
 }
 
-.navbar-toggle:checked ~ nav {
+.devnav-nav img {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+.devnav-nav img:hover {
+  filter: hue-rotate(270deg);
+  -webkit-filter: hue-rotate(270deg);
+}
+
+.devnav-toggle:checked ~ nav {
   transform: scale(1, 1);
 }
 
-.navbar-toggle:checked ~ nav a {
+.devnav-toggle:checked ~ nav a {
   opacity: 1;
   transition: opacity 200ms ease-in-out 150ms;
 }
 
 @media screen and (min-width: 800px) {
-  .navbar-toggle-label {
+  .devnav-toggle-label {
     display: none;
   }
 
-  .homenav-header {
+  .devnav-header {
     display: grid;
-    grid-template-columns: 50px 250px auto 440px;
+    grid-template-columns: 200px auto;
   }
 
-  .navbar-nav {
+  .portfolio-name {
+    grid-column: 1 / 2;
+    font-size: 1.8em;
+    padding-left: 0.5em;
+  }
+
+  .devnav-nav {
     all: unset;
-    grid-column: 4 / 5;
+    grid-column: 2 / 3;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin-right: 1em;
   }
 
-  .user-name {
+  /* .user-name {
     grid-column: 2/3;
     display: flex;
     align-items: center;
-  }
+  } */
 
   /* .homenav-logo {
     grid-column: 2 / 3;
     margin-left: 1em;
   } */
 
-  .navbar-nav a {
+  .devnav-nav a {
     opacity: 1;
   }
 
-  .navbar-nav a:hover {
+  .devnav-nav a:hover {
     color: blue;
   }
 
-  .navbar-nav ul {
+  .devnav-nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -160,7 +177,7 @@
   }
 }
 
-.navbar-nav li {
+.devnav-nav li {
   margin: 0;
   padding-left: 1em;
 }

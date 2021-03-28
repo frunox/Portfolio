@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import { Menu, Button } from 'semantic-ui-react';
 import DevDataContext from '../../contexts/DevDataContext'
 import SetupContext from '../../contexts/SetupContext';
-import "./style.css";
+import "./DevNav.css";
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -167,37 +167,29 @@ const DevNav = () => {
 
   let content = (
     <div>
-      <Menu inverted stackable fixed="top" className="menu">
-        <Menu.Item header className="logo">{localStorage.getItem('dynamic-fname')} {localStorage.getItem('dynamic-lname')}</Menu.Item>
-        <Menu.Menu position="left">
-          <Menu.Item as="a" href="/" name="home">
-          </Menu.Item>
-        </Menu.Menu>
-        <Menu.Menu position="right">
-          <Menu.Item as="a" href="/about" name="about">
-          </Menu.Item>
-
-          <Menu.Item as="a" href="/contact" name="contact">
-          </Menu.Item>
-
-          <Menu.Item as="a" icon="setting" onClick={openSettingsModal}>
-          </Menu.Item>
-
-          {!isLoggedIn ? (
-            <Menu.Item name="login" onClick={openLoginModal}>
-            </Menu.Item>
-          ) : (
+      <header className="devnav-header">
+        <h1 className="portfolio-name">My Portfolio</h1>
+        <input type='checkbox' id="devnav-toggle" className="devnav-toggle"></input>
+        <nav className='devnav-nav'>
+          <ul className='devnav-ul'>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/contact'>Contact</a></li>
+            {!isLoggedIn ? (
+              <li><a href='#' onClick={openLoginModal}>Log In</a></li>
+            ) : (
               <React.Fragment>
-                <Menu.Item name="sync" onClick={openSyncModal}>
-                </Menu.Item>
-                <Menu.Item name="logout" onClick={openLogoutModal}>
-                </Menu.Item>
+                <li><a href='#' onClick={openSettingsModal}>Settings</a></li>
+                <li><a href='#' onClick={openSyncModal}>Sync</a></li>
+                <li><a href='#' onClick={openLogoutModal}>Log Out</a></li>
               </React.Fragment>
-            )
-          }
-
-        </Menu.Menu>
-      </Menu>
+            )}
+          </ul>
+        </nav>
+        <label for='devnav-toggle' className='devnav-toggle-label'>
+          <span></span>
+        </label>
+      </header>
 
       <div className='form-wrapper'>
         <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
