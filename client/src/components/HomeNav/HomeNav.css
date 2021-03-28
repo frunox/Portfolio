@@ -82,13 +82,14 @@
 
 .navbar-nav ul {
   margin: 0;
-  padding: 0;
-  padding-bottom: 0.2em;
+  padding: 0.3em 0;
   list-style: none;
 }
 
 .navbar-nav li {
   margin-bottom: 8px;
+  margin-left: 1em;
+  padding-bottom: 0.2em;
 }
 
 .navbar-nav a {
