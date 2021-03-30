@@ -270,7 +270,7 @@ const DevTable = () => {
                     onClick={handleSort("name")}
                   >
                     Project Name
-            </Table.HeaderCell>
+                  </Table.HeaderCell>
                   <Table.HeaderCell
                     sorted={column === "description" ? direction : null}
                     onClick={handleSort("description")}
@@ -293,8 +293,8 @@ const DevTable = () => {
                   filteredRepos,
                   ({ repoDesc, activeFlag, repoName, repoID }, index) => (
                     <Table.Row className="devRow" id={index} key={repoID} value={index} active onClick={e => showDevRepo(repoID)}>
-                      <Table.Cell>{repoName}</Table.Cell>
-                      <Table.Cell>{repoDesc}</Table.Cell>
+                      <Table.Cell width={3}>{repoName}</Table.Cell>
+                      <Table.Cell width={11}>{repoDesc}</Table.Cell>
                       <Table.Cell textAlign="center">{activeFlag}</Table.Cell>
                     </Table.Row>
                   )
