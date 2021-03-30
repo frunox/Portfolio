@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Modal from 'react-modal';
 import API from "../../utils/API";
-import { Menu, Button } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import DevDataContext from '../../contexts/DevDataContext'
 import SetupContext from '../../contexts/SetupContext';
 import "./DevNav.css";
@@ -89,22 +89,26 @@ const DevNav = () => {
     // console.log('DEVNAV in openLoginModal')
     // setupCtx.updateLoggedIn()
     setupCtx.openLoginModal(true)
+    document.getElementById("devnav-toggle").checked = false;
   }
 
   const openLogoutModal = () => {
     // console.log('DEVNAV in openLogoutModal')
     // setupCtx.updateLoggedIn()
     setupCtx.openLogoutModal(true)
+    document.getElementById("devnav-toggle").checked = false;
   }
 
   const openSettingsModal = () => {
     // console.log('DEVNAV in openSettingsModal')
     // setupCtx.updateLoggedIn()
     setupCtx.openSettingsModal(true)
+    document.getElementById("devnav-toggle").checked = false;
   }
 
   const openSyncModal = () => {
     setupCtx.openSyncModal(true)
+    document.getElementById("devnav-toggle").checked = false;
   }
 
   const reSync = async () => {
