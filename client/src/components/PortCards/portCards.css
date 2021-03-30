@@ -1,15 +1,21 @@
 .portCards {
   position: relative;
   top: 150px;
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
 }
 
 .columns {
   margin-bottom: 25px;
 }
-/* 
-.glass.div.ui.equal.width.grid.stackable {
-  position: relative;
-  left: 10%;
-} */
+
+.rows {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .portCards {
+    left: 1%;
+    width: 98%;
+  }
+}

@@ -12,7 +12,7 @@ import Settings from "./pages/Settings/Settings";
 import DevDataContext from "./contexts/DevDataContext";
 import SetupContext from "./contexts/SetupContext";
 import CreateAccountComp from "./components/CreateAccountcomp";
-// import './App.css'
+import './App.css'
 
 // devData - This is in the format of how we are reading the database.
 // state is set after call to db for active developer info and repos to display
@@ -235,8 +235,8 @@ const App = () => {
             {state.initialized ? (
               <Route exact path="/" component={Home} />
             ) : (
-                <Route exact path="/" component={CreateAccountComp} />
-              )}
+              <Route exact path="/" component={CreateAccountComp} />
+            )}
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/about" component={About} />
             <Route exact path="/developer" component={Developer} />
