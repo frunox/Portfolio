@@ -1,6 +1,6 @@
 .top {
   position: relative;
-  top: 55px;
+  top: 50px;
   z-index: 10;
 }
 
@@ -11,6 +11,10 @@
 
 .devHeader {
   font-style: italic;
+  margin-bottom: 0;
   position: relative;
-  top: 3px;
+}
+
+.cText {
+  margin-top: 10px;
 }

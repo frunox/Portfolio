@@ -7,9 +7,6 @@ import "./devContainer.css";
 const DevContainer = () => (
     <Fragment>
         <div className='devContainer'>
-            <Header as="h3" className="cText" textAlign='center'>
-                Change which projects appear on your portfolio
-        </Header>
             <ul className="bList">
                 <li>Review your projects in the table below</li>
                 <li>Projects with Display = true will display on the home page</li>

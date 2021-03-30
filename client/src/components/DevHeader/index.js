@@ -10,6 +10,9 @@ const DevHeader = () => (
             dividing>
             Welcome to your Dynamic Portfolio
         </Header>
+        <Header as="h3" className="cText" textAlign='center'>
+            Change which projects appear on your portfolio
+        </Header>
     </div>
 )
 
