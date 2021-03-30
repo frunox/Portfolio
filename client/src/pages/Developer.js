@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from 'semantic-ui-react';
-import DevBackground from '../components/DevBackGround'
 import DevNav from "../components/DevNav";
 import DevHeader from "../components/DevHeader";
 import DevContainer from '../components/DevContainer'
@@ -21,13 +20,12 @@ function Developer() {
 
   return (
     <div className="devPage">
-      <DevBackground />
       <DevNav />
       <Container>
         <DevHeader className="welcome" />
         <Spinner />
+        <DevContainer />
       </Container>
-      <DevContainer />
       <DevTable />
       <LoginModal />
       <LogoutModal />

@@ -8,3 +8,8 @@
 *::after {
   box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(to right, #145eb3, #6cdbeb);
+  /* background: #145eb3; */
+}

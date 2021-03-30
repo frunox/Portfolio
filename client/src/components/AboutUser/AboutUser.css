@@ -4,16 +4,17 @@
 } */
 
 .aboutUser {
-  margin-top: 100px;
+  margin-top: 60px;
   position: absolute;
-  top: 25px;
-  left: 10%;
+  left: 2%;
+  right: 2%;
   z-index: 10;
 }
 
 .aboutSection1 {
   color: rgb(168, 52, 67);
-  margin-right: -1px;
+  width: 80%;
+  /* margin-right: -1px; */
   padding-right: 0;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -23,7 +24,7 @@
 
 .aboutSection2 {
   color: rgb(9, 110, 26);
-  margin-left: -35px;
+  margin-left: -25px;
   padding-right: 0;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -31,23 +32,10 @@
 
 .row2 {
   position: relative;
-  left: 4%;
+  left: 8%;
 }
-
-.aboutImage1 {
-  border-radius: 5%;
-  height: 180px;
-  width: 270px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.aboutImage2 {
-  border-radius: 5%;
-  height: 180px;
-  width: 270px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+img.ui.image {
+  display: none;
 }
 
 .aboutCard {
@@ -59,7 +47,7 @@
   margin: 0.5rem 0 0.5rem;
   padding-top: 5px;
   padding-bottom: 5px;
-  max-width: 100%;
+  max-width: 92%;
   border-radius: 1rem;
   box-shadow: 6px 6px 20px rgba(75, 75, 75, 0.377);
 }
@@ -67,6 +55,11 @@
 .sectionP {
   margin-bottom: 3px;
   font-size: 1.2rem;
+}
+
+.aboutSection2,
+.sectionP {
+  padding-left: 10px;
 }
 
 .cardLi {

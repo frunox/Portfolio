@@ -8,8 +8,7 @@ const Intro = () => {
   return (
     <div className='intro'>
       <div className="jumbo">
-        <h1 className="greeting">Welcome to the portfolio page for</h1>
-        <h1 className="userName">{devCtx.state.fname} {devCtx.state.lname}</h1>
+        <h1 className="greeting">Welcome to my portfolio page</h1>
         <h2 className='tagLine'>
           A web developer. Design, management and planning experience.  Bringing projects to life!
         </h2>
