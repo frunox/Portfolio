@@ -85,89 +85,87 @@ const SettingsModal = () => {
   }
 
   let content = (
-    <div className="wrapper">
-      <div className="form-wrapper">
-        <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
-          style={{
-            overlay: {
-              backgroundColor: 'rgba(155, 155, 155, 0.5)'
-            },
-            content: {
-              borderRadius: '10px',
-              top: '90px',
-              border: '1px solid black',
-              width: '500px',
-              margin: '0 auto',
-              height: '450px'
-            }
-          }}
-        >
-          <h1>Revise User Information</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
-              <input
-                placeholder={state.firstName}
-                type="text"
-                name="firstName"
-                onChange={handleChange}
-              />
+    <div>
+      <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
+        style={{
+          overlay: {
+            backgroundColor: 'rgba(155, 155, 155, 0.5)'
+          },
+          content: {
+            position: 'absolute',
+            borderRadius: '10px',
+            top: '90px',
+            border: '1px solid black',
+            width: '500px',
+            margin: '0 auto',
+            height: '450px'
+          }
+        }}
+      >
+        <h1>Revise User Information</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="firstName">
+            <label htmlFor="firstName">First Name</label>
+            <input
+              placeholder={state.firstName}
+              type="text"
+              name="firstName"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="lastName">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              placeholder={state.lastName}
+              type="text"
+              name="lastName"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="email">
+            <label htmlFor="email">Email</label>
+            <input
+              placeholder={state.email}
+              type="email"
+              name="email"
+              onChange={handleChange}
+            />
+          </div>
+          {/* LinkedIn */}
+          <div className="linkedInLink">
+            <label htmlFor="linkedInLink">LinkedIn link</label>
+            <input
+              placeholder={state.linkedInLink}
+              type="text"
+              name="linkedInLink"
+              onChange={handleChange}
+            />
+          </div>
+          {/* LinkedIn */}
+          {/* resume */}
+          <div className="resumeLink">
+            <label htmlFor="resumeLink">Resume Link</label>
+            <input
+              placeholder={state.resumeLink}
+              type="text"
+              name="resumeLink"
+              onChange={handleChange}
+            />
+          </div>
+          {console.log('SETTINGS state', state)}
+          {setupCtx.state.loggedIn && (
+            <div className="createAccount">
+              <button type="submit">Change Settings</button>
+            </div>)
+          }
+        </form>
+        {!isLoggedIn &&
+          (
+            <div className="createAccount">
+              <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
             </div>
-            <div className="lastName">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                placeholder={state.lastName}
-                type="text"
-                name="lastName"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <input
-                placeholder={state.email}
-                type="email"
-                name="email"
-                onChange={handleChange}
-              />
-            </div>
-            {/* LinkedIn */}
-            <div className="linkedInLink">
-              <label htmlFor="linkedInLink">LinkedIn link</label>
-              <input
-                placeholder={state.linkedInLink}
-                type="text"
-                name="linkedInLink"
-                onChange={handleChange}
-              />
-            </div>
-            {/* LinkedIn */}
-            {/* resume */}
-            <div className="resumeLink">
-              <label htmlFor="resumeLink">Resume Link</label>
-              <input
-                placeholder={state.resumeLink}
-                type="text"
-                name="resumeLink"
-                onChange={handleChange}
-              />
-            </div>
-            {console.log('SETTINGS state', state)}
-            {setupCtx.state.loggedIn && (
-              <div className="createAccount">
-                <button type="submit">Change Settings</button>
-              </div>)
-            }
-          </form>
-          {!isLoggedIn &&
-            (
-              <div className="createAccount">
-                <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
-              </div>
-            )}
-        </Modal>
-      </div>
-
+          )}
+      </Modal>
     </div>
   );
   return content;

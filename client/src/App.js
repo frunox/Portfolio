@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import LoginModal from './components/LoginForm/LoginModal';
 import LogoutModal from "./components/LogoutForm/LogoutModal";
-import Settings from "./pages/Settings/Settings";
 import DevDataContext from "./contexts/DevDataContext";
 import SetupContext from "./contexts/SetupContext";
 import CreateAccountComp from "./components/CreateAccountcomp";
@@ -243,7 +242,6 @@ const App = () => {
             <Route exact path="/login" component={LoginModal} />
             <Route exact path="/logout" component={LogoutModal} />
             <Route exact path="/signin" component={CreateAccountComp} />
-            <Route exact path="/settings" component={Settings} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
