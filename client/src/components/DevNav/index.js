@@ -214,7 +214,7 @@ const DevNav = () => {
             }
           }}
         >
-          <h1>Revise User Information</h1>
+          <h1>Change User Information</h1>
           <form onSubmit={handleSubmit}>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
