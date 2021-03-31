@@ -254,12 +254,10 @@ const DevTable = () => {
   let content = (
     <Fragment>
       <div className='devPage'>
+        <div className="searchLine">
+          <RepoSearchBox handleSearchChange={handleSearchChange} resetRepoSearch={resetRepoSearch} />
+        </div>
         <div className='tableContent'>
-          <Container>
-            <span className="searchLine">
-              <RepoSearchBox handleSearchChange={handleSearchChange} resetRepoSearch={resetRepoSearch} />
-            </span>
-          </Container>
           <div className="devTable">
             <Table sortable celled unstackable fixed singleLine inverted selectable>
               <Table.Header>

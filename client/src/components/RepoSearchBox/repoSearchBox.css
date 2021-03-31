@@ -1,8 +1,9 @@
 .search {
   position: relative;
-  left: 83px;
-  top: -20px;
-  bottom: -5px;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 80%;
 }
 
 .searchBox {
