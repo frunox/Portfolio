@@ -9,7 +9,7 @@ const DevContainer = () => (
         <div className='devContainer'>
             <ul className="bList">
                 <li>Review your projects in the table below</li>
-                <li>Projects with Display = true will display on the home page</li>
+                <li>Projects with Show = true will display on the home page</li>
                 <li>Click on a project row to change the Display status or add an image link and search keywords</li>
             </ul>
             <hr />
