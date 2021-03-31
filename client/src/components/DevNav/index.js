@@ -183,7 +183,7 @@ const DevNav = () => {
               <li><a href='#' onClick={openLoginModal}>Log In</a></li>
             ) : (
               <React.Fragment>
-                <li><a href='#' onClick={openSettingsModal}>Settings</a></li>
+                <li><a href='#' onClick={openSettingsModal}>User</a></li>
                 <li><a href='#' onClick={openSyncModal}>Sync</a></li>
                 <li><a href='#' onClick={openLogoutModal}>Log Out</a></li>
               </React.Fragment>
@@ -195,7 +195,7 @@ const DevNav = () => {
         </label>
       </header>
 
-      <div className='form-wrapper'>
+      <div>
         <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
           style={{
             overlay: {
@@ -205,10 +205,9 @@ const DevNav = () => {
             content: {
               backgroundColor: 'white',
               borderRadius: '10px',
-              position: 'relative',
               top: '90px',
               border: '1px solid black',
-              width: '500px',
+              width: '400px',
               margin: '0 auto',
               height: '440px',
             }
