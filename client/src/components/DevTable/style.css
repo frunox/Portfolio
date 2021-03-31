@@ -22,7 +22,14 @@ hr {
 .devtable-sticky {
   position: sticky;
   top: 0;
-  background-color: lightgrey;
+  background-color: grey;
+  color: black;
+}
+
+.ui.table td.active,
+.ui.table tr.active {
+  color: white !important;
+  background-color: lightgray;
 }
 
 .formBox {

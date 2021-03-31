@@ -261,7 +261,7 @@ const DevTable = () => {
             </span>
           </Container>
           <div className="devTable">
-            <Table sortable celled unstackable fixed singleLine selectable>
+            <Table sortable celled unstackable fixed singleLine inverted selectable>
               <Table.Header>
                 <Table.Row className="devtable-sticky">
                   <Table.HeaderCell
@@ -293,9 +293,9 @@ const DevTable = () => {
                   filteredRepos,
                   ({ repoDesc, activeFlag, repoName, repoID }, index) => (
                     <Table.Row className="devRow" id={index} key={repoID} value={index} active onClick={e => showDevRepo(repoID)}>
-                      <Table.Cell width={3}>{repoName}</Table.Cell>
-                      <Table.Cell width={11}>{repoDesc}</Table.Cell>
-                      <Table.Cell textAlign="center">{activeFlag}</Table.Cell>
+                      <Table.Cell className="devtable-cell" width={3}>{repoName}</Table.Cell>
+                      <Table.Cell className="devtable-cell" width={11}>{repoDesc}</Table.Cell>
+                      <Table.Cell className="devtable-cell" textAlign="center">{activeFlag}</Table.Cell>
                     </Table.Row>
                   )
                 )}
