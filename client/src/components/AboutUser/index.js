@@ -20,7 +20,7 @@ function AboutUser() {
                             <li className='cardLi'>Courses in TypeScript, Ionic, Advanced JavaScript, GraphQL, Docker/Kubernetes</li>
                             <li className='cardLi'>Google Cloud, Firebase, Firestore</li>
                             <li className='cardLi'>Image Creation/Manipulation, GIMP</li>
-                            <p className='sectionP'>See my <a className="links" href={"https://drive.google.com/file/d/1126gWTyAZ6ycD46EI_B44Gy3IBwgyNw8/view?usp=sharing"} rel="noopener noreferrer" target="_blank"> Resume</a></p>
+                            <p className='sectionP'>See my <a className="links" href={devCtx.state.resumeLink} rel="noopener noreferrer" target="_blank"> Resume</a></p>
 
                         </div>
                         {/* <p><a className="links" href={devData.portfolioLink} rel="noopener noreferrer" target="_blank">Portfolio</a></p> */}

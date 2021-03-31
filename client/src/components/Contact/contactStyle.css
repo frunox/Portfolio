@@ -16,7 +16,12 @@ h3 {
 
 .links {
   font-size: 1.1em;
-  color: green;
+  font-weight: bold;
+  color: darkred;
+}
+
+.links:hover {
+  color: lightgray;
 }
 
 .send {
