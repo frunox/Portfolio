@@ -261,9 +261,9 @@ const DevTable = () => {
             </span>
           </Container>
           <div className="devTable">
-            <Table sortable celled fixed inverted singleLine>
-              <Table.Header inverted>
-                <Table.Row className="sticky">
+            <Table sortable celled unstackable fixed singleLine selectable>
+              <Table.Header>
+                <Table.Row className="devtable-sticky">
                   <Table.HeaderCell
                     width={3}
                     sorted={column === "name" ? direction : null}
@@ -276,15 +276,15 @@ const DevTable = () => {
                     onClick={handleSort("description")}
                   >
                     Description
-            </Table.HeaderCell>
+                  </Table.HeaderCell>
                   <Table.HeaderCell
                     width={2}
                     textAlign="center"
                     sorted={column === "activeFlag" ? direction : null}
                     onClick={handleSort("activeFlag")}
                   >
-                    Display
-            </Table.HeaderCell>
+                    Show
+                  </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
               <Table.Body>

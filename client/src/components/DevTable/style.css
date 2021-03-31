@@ -19,14 +19,21 @@ hr {
   margin-left: 5%;
 }
 
+.devtable-sticky {
+  position: sticky;
+  top: 0;
+  background-color: lightgrey;
+}
+
 .formBox {
   border: 1px solid black;
   margin-top: 5px;
   font-size: 1.2rem;
 }
 
-.devRow:hover {
-  background-color: lightgray;
+.ui.table td.active,
+.ui.table tr.active {
+  background-color: transparent !important;
 }
 
 .repoForm {
