@@ -1,23 +1,23 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Modal from 'react-modal';
-import API from "../../utils/API";
+import API from '../../utils/API';
 import { Button } from 'semantic-ui-react';
-import DevDataContext from '../../contexts/DevDataContext'
+import DevDataContext from '../../contexts/DevDataContext';
 import SetupContext from '../../contexts/SetupContext';
-import "./DevNav.css";
+import './DevNav.css';
 
-Modal.setAppElement(document.getElementById('root'))
+Modal.setAppElement(document.getElementById('root'));
 
 const DevNav = () => {
   let [state, setState] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    linkedInLink: "",
-    resumeLink: "",
-  })
-  const devCtx = useContext(DevDataContext)
-  const setupCtx = useContext(SetupContext)
+    fname: '',
+    lname: '',
+    email: '',
+    linkedInLink: '',
+    resumeLink: '',
+  });
+  const devCtx = useContext(DevDataContext);
+  const setupCtx = useContext(SetupContext);
   // console.log('DEVNAV setupCtx', setupCtx.state)
 
   let settings = {
@@ -29,17 +29,17 @@ const DevNav = () => {
     linkedInLink: devCtx.state.linkedInLink,
     resumeLink: devCtx.state.resumeLink,
     redirect: false,
-    login: false
-  }
+    login: false,
+  };
 
   let openModal = setupCtx.state.settingsModalOpen;
   let openSync = setupCtx.state.syncModalOpen;
-  const isLoggedIn = JSON.parse(localStorage.getItem("jtsy-login"));
+  const isLoggedIn = JSON.parse(localStorage.getItem('jtsy-login'));
   // console.log('DEVNAV isloggedIn', isLoggedIn)
   useEffect(() => {
     // console.log('DEVNAV useEffect isLoggedIn', isLoggedIn)
-    setState(settings)
-  }, [devCtx.state])
+    setState(settings);
+  }, [devCtx.state]);
 
   // console.log("DEVNAV state", state)
 
@@ -54,11 +54,14 @@ const DevNav = () => {
       email: state.email,
       linkedInLink: state.linkedInLink,
       resumeLink: state.resumeLink,
-    }
+    };
     localStorage.setItem('dynamic-fname', revDevData.fname);
     localStorage.setItem('dynamic-lname', revDevData.lname);
-    console.log('in Settings: call updateDeveloper', revDevData.developerGithubID)
-    API.revDeveloper(revDevData)
+    console.log(
+      'in Settings: call updateDeveloper',
+      revDevData.developerGithubID
+    );
+    API.revDeveloper(revDevData);
     setupCtx.updateDevUpdated(true);
     setState({
       ...state,
@@ -68,84 +71,84 @@ const DevNav = () => {
       linkedInLink: revDevData.linkedInLink,
       resumeLink: revDevData.resumeLink,
       redirect: true,
-    })
-    setupCtx.openSettingsModal(false)
+    });
+    setupCtx.openSettingsModal(false);
   };
 
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log(name, value)
+    console.log(name, value);
     setState({ ...state, [name]: value });
   };
 
   const logInHandler = () => {
     // setupCtx.openSettingsModal(false);
-    console.log('SETTINGSModal loginHandler')
-    setupCtx.openLoginModal(true)
-  }
+    console.log('SETTINGSModal loginHandler');
+    setupCtx.openLoginModal(true);
+  };
 
   const openLoginModal = () => {
     // console.log('DEVNAV in openLoginModal')
     // setupCtx.updateLoggedIn()
-    setupCtx.openLoginModal(true)
-    document.getElementById("devnav-toggle").checked = false;
-  }
+    setupCtx.openLoginModal(true);
+    document.getElementById('devnav-toggle').checked = false;
+  };
 
   const openLogoutModal = () => {
     // console.log('DEVNAV in openLogoutModal')
     // setupCtx.updateLoggedIn()
-    setupCtx.openLogoutModal(true)
-    document.getElementById("devnav-toggle").checked = false;
-  }
+    setupCtx.openLogoutModal(true);
+    document.getElementById('devnav-toggle').checked = false;
+  };
 
   const openSettingsModal = () => {
     // console.log('DEVNAV in openSettingsModal')
     // setupCtx.updateLoggedIn()
-    setupCtx.openSettingsModal(true)
-    document.getElementById("devnav-toggle").checked = false;
-  }
+    setupCtx.openSettingsModal(true);
+    document.getElementById('devnav-toggle').checked = false;
+  };
 
   const openSyncModal = () => {
-    setupCtx.openSyncModal(true)
-    document.getElementById("devnav-toggle").checked = false;
-  }
+    setupCtx.openSyncModal(true);
+    document.getElementById('devnav-toggle').checked = false;
+  };
 
   const reSync = async () => {
     setupCtx.updateSync(true);
     localStorage.setItem('dynamic-sync', 'true');
-    setupCtx.openSyncModal(false)
+    setupCtx.openSyncModal(false);
     // console.log('DEVNAV Sync')
     const developerData = {
       developerLoginName: devCtx.state.developerLoginName,
-      developerGithubID: " ",
+      developerGithubID: ' ',
       repositories: [],
       fname: devCtx.state.fname,
       lname: devCtx.state.lname,
       email: devCtx.state.email,
       linkedInLink: devCtx.state.linkedInLink,
       resumeLink: devCtx.state.resumeLink,
-      active: true
-    }
+      active: true,
+    };
     console.log('DEVNAV developerData', developerData);
     await API.deleteDeveloper()
       .then(() => {
-        console.log('reSync 1 - deleteDeveloper', developerData)
-        API.updateDeveloper(developerData)
-        return developerData.developerLoginName
+        console.log('reSync 1 - deleteDeveloper', developerData);
+        API.updateDeveloper(developerData);
+        return developerData.developerLoginName;
       })
       .then((loginName) => {
-        console.log('reSync 2 - call getsync')
+        console.log('reSync 2 - call getsync');
         API.getsync(loginName);
       })
       .catch((err) => console.log(err));
-    getNewDevData()
-  }
+    getNewDevData();
+  };
 
   const getNewDevData = () => {
     function getData() {
-      console.log('reSync 3 - pause')
-      console.log('reSync 4 - call activeDevData')
+      console.log('reSync 3 - pause');
+      console.log('reSync 4 - call activeDevData');
       API.getActiveDevData()
         .then((activeDevData) => {
           const newDevData = {
@@ -157,50 +160,77 @@ const DevNav = () => {
             email: activeDevData.data.email,
             linkedInLink: activeDevData.data.linkedInLink,
             resumeLink: activeDevData.data.resumeLink,
-            active: true
-          }
-          console.log('reSync 5 - newDevData', newDevData)
-          devCtx.updateDev(newDevData)
+            active: true,
+          };
+          console.log('reSync 5 - newDevData', newDevData);
+          devCtx.updateDev(newDevData);
         })
         .catch((err) => console.log(err));
       localStorage.setItem('dynamic-sync', 'false');
-
     }
-    setTimeout(getData, 2000)
-  }
+    setTimeout(getData, 2000);
+  };
 
   let content = (
     <div>
       <header className="devnav-header">
         <h1 className="portfolio-name">My Portfolio</h1>
-        <input type='checkbox' id="devnav-toggle" className="devnav-toggle"></input>
-        <nav className='devnav-nav'>
-          <ul className='devnav-ul'>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/about'>About</a></li>
-            <li><a href='/contact'>Contact</a></li>
+        <input
+          type="checkbox"
+          id="devnav-toggle"
+          className="devnav-toggle"
+        ></input>
+        <nav className="devnav-nav">
+          <ul className="devnav-ul">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+            <li>
+              <a href="#" onClick={openSettingsModal}>
+                User
+              </a>
+            </li>
             {!isLoggedIn ? (
-              <li><a href='#' onClick={openLoginModal}>Log In</a></li>
+              <li>
+                <a href="#" onClick={openLoginModal}>
+                  Log In
+                </a>
+              </li>
             ) : (
               <React.Fragment>
-                <li><a href='#' onClick={openSettingsModal}>User</a></li>
-                <li><a href='#' onClick={openSyncModal}>Sync</a></li>
-                <li><a href='#' onClick={openLogoutModal}>Log Out</a></li>
+                <li>
+                  <a href="#" onClick={openSyncModal}>
+                    Sync
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={openLogoutModal}>
+                    Log Out
+                  </a>
+                </li>
               </React.Fragment>
             )}
           </ul>
         </nav>
-        <label for='devnav-toggle' className='devnav-toggle-label'>
+        <label for="devnav-toggle" className="devnav-toggle-label">
           <span></span>
         </label>
       </header>
 
       <div>
-        <Modal isOpen={openModal} onRequestClose={() => setupCtx.openSettingsModal(false)}
+        <Modal
+          isOpen={openModal}
+          onRequestClose={() => setupCtx.openSettingsModal(false)}
           style={{
             overlay: {
               backgroundColor: 'rgba(0, 0, 255, 0.5)',
-              zIndex: '100'
+              zIndex: '100',
             },
             content: {
               backgroundColor: 'white',
@@ -210,7 +240,7 @@ const DevNav = () => {
               width: '400px',
               margin: '0 auto',
               height: '440px',
-            }
+            },
           }}
         >
           <h1>Change User Information</h1>
@@ -266,25 +296,30 @@ const DevNav = () => {
             {console.log('DEVNAV Button', isLoggedIn)}
             {isLoggedIn && (
               <div className="createAccount">
-                <Button color='blue' type="submit">Change Settings</Button>
-              </div>)
-            }
-          </form>
-          {console.log('DEVNAV isLoggedIn', isLoggedIn)}
-          {!isLoggedIn &&
-            (
-              <div className="createAccount">
-                <Button color="red" type="submit" onClick={logInHandler}>Log In to Change Settings</Button>
+                <Button color="blue" type="submit">
+                  Change Settings
+                </Button>
               </div>
             )}
+          </form>
+          {console.log('DEVNAV isLoggedIn', isLoggedIn)}
+          {!isLoggedIn && (
+            <div className="createAccount">
+              <Button color="red" type="submit" onClick={logInHandler}>
+                Log In to Change Settings
+              </Button>
+            </div>
+          )}
         </Modal>
       </div>
 
-      <Modal isOpen={openSync} onRequestClose={() => setupCtx.openSyncModal(false)}
+      <Modal
+        isOpen={openSync}
+        onRequestClose={() => setupCtx.openSyncModal(false)}
         style={{
           overlay: {
             backgroundColor: 'rgba(0, 0, 255, 0.5)',
-            zIndex: '100'
+            zIndex: '100',
           },
           content: {
             borderRadius: '10px',
@@ -293,19 +328,24 @@ const DevNav = () => {
             width: '350px',
             margin: '0 auto',
             height: '180px',
-            zIndex: '100'
-          }
+            zIndex: '100',
+          },
         }}
       >
         <h1>Re-Sync Repositories</h1>
-        <p>Reload your repositories from GitHub and re-synchronize the to include any recent changes.</p>
+        <p>
+          Reload your repositories from GitHub and re-synchronize the to include
+          any recent changes.
+        </p>
         <div className="createAccount">
-          <Button color="blue" type="submit" onClick={reSync}>Sync</Button>
+          <Button color="blue" type="submit" onClick={reSync}>
+            Sync
+          </Button>
         </div>
       </Modal>
-    </div >
-  )
-  return content
-}
+    </div>
+  );
+  return content;
+};
 
 export default DevNav;
